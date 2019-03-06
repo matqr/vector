@@ -1,0 +1,23 @@
+anki\_vector.touch
+==================
+
+.. automodule:: anki_vector.touch
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TouchComponent
+      TouchSensorData
+   
+   
+
+   
+   
+   

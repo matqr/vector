@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started With the Vector SDK &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The API" href="api.html" />
+    <link rel="prev" title="Advanced Tips" href="advanced-tips.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started With the Vector SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#anki-sdk-forums">Anki SDK Forums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-up-the-sdk">Starting Up the SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-program">Example Program</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#first-steps-hello-world">First Steps - “Hello, World!”</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-program">The Program</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">The API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started With the Vector SDK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/getstarted.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-the-vector-sdk">
+<h1>Getting Started With the Vector SDK<a class="headerlink" href="#getting-started-with-the-vector-sdk" title="Permalink to this headline">¶</a></h1>
+<p>To make sure you get the best experience possible out of the SDK, please ensure you have followed the steps in the <a class="reference internal" href="initial.html"><span class="doc">Initial Setup</span></a>.</p>
+<div class="section" id="anki-sdk-forums">
+<h2>Anki SDK Forums<a class="headerlink" href="#anki-sdk-forums" title="Permalink to this headline">¶</a></h2>
+<p>Please visit our <a class="reference external" href="https://forums.anki.com/">Anki SDK Forums</a> where you can:</p>
+<ul class="simple">
+<li>Get assistance with your code</li>
+<li>Hear about upcoming SDK additions</li>
+<li>Share your work</li>
+<li>Join discussion about the SDK</li>
+<li>Be a part of the Vector SDK Community!</li>
+</ul>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>You have completed the Installation steps, found here: <a class="reference internal" href="initial.html#initial"><span class="std std-ref">Initial Setup</span></a></li>
+<li>You have updated Vector to OS 1.0.1 or later. Check the OS version by putting Vector on the charger, double-tapping his backpack button, and raising and lowering his arms once.</li>
+<li>The Vector companion app is <em>not</em> currently connected to Vector.</li>
+<li>Vector is connected to the same network as your computer.</li>
+<li>You can see Vector’s eyes on his screen.</li>
+</ul>
+</div>
+<div class="section" id="starting-up-the-sdk">
+<h2>Starting Up the SDK<a class="headerlink" href="#starting-up-the-sdk" title="Permalink to this headline">¶</a></h2>
+<p>On the computer, open Terminal (macOS/Linux) or Command Prompt (Windows) and navigate into your <code class="docutils literal notranslate"><span class="pre">vector_python_sdk_0.5.0</span></code> folder by typing <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">vector_python_sdk_0.5.0</span></code>, and press <strong>Enter</strong>.</p>
+</div>
+<div class="section" id="example-program">
+<h2>Example Program<a class="headerlink" href="#example-program" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="first-steps-hello-world">
+<h3>First Steps - “Hello, World!”<a class="headerlink" href="#first-steps-hello-world" title="Permalink to this headline">¶</a></h3>
+<p>Let’s test your new setup by running a very simple program. This program instructs Vector to say “Hello, World!” - a perfect way to introduce him and you to the world of programming.</p>
+<div class="section" id="the-program">
+<h4>The Program<a class="headerlink" href="#the-program" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Run the program using the same Terminal (macOS/Linux) / Command Prompt (Windows) window mentioned above:</li>
+</ol>
+<p>First, change to the <code class="docutils literal notranslate"><span class="pre">tutorials</span></code> sub-directory of the <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory.</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p class="first">For macOS and Linux systems, type the following and press <strong>Enter</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">examples</span><span class="o">/</span><span class="n">tutorials</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">For Windows systems, type the following and press <strong>Enter</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">examples</span>\<span class="n">tutorials</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>Then, run the program.</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p class="first">For macOS and Linux systems, type the following and press <strong>Enter</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="mi">01</span><span class="n">_hello_world</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The same can also be achieved on macOS/Linux with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="mi">01</span><span class="n">_hello_world</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<ol class="loweralpha" start="2">
+<li><p class="first">For Windows systems, type the following and press <strong>Enter</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="mi">01</span><span class="n">_hello_world</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>If done correctly, Vector will say “Hello, World!”</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If Vector does not perform as expected, look at the first Terminal window and make sure no error messages appeared. If you continue to have issues, please seek help in the Forums.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have more than one Vector configured on your device, you can pass the serial number of the Vector you want to use at the command line:
+<code class="docutils literal notranslate"><span class="pre">./01_hello_world.py</span> <span class="pre">--serial</span> <span class="pre">{robot_serial_number}</span></code></p>
+</div>
+<p>You are now all set up to run Python programs on Vector.</p>
+<p>Now that you have run your own Vector program, take a look at the rest of the Vector SDK and at the many other example programs to get more ideas.</p>
+<p><a class="reference external" href="https://www.anki.com/en-us/company/terms-and-conditions">Terms and Conditions</a> and <a class="reference external" href="https://www.anki.com/en-us/company/privacy">Privacy Policy</a></p>
+<p><a class="reference external" href="http://developer.anki.com">Click here to return to the Anki Developer website.</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="The API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="advanced-tips.html" class="btn btn-neutral" title="Advanced Tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

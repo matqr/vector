@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Tips &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started With the Vector SDK" href="getstarted.html" />
+    <link rel="prev" title="Troubleshooting" href="troubleshooting.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Tips</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#moving-vector-between-wifi-networks">Moving Vector between WiFi networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-multiple-vectors">Using multiple Vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-anki-robot-serial">Set ANKI_ROBOT_SERIAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-anki-robot-host-and-vector-robot-name">Set ANKI_ROBOT_HOST and VECTOR_ROBOT_NAME</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">The API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Tips</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/advanced-tips.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-tips">
+<span id="id1"></span><h1>Advanced Tips<a class="headerlink" href="#advanced-tips" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="moving-vector-between-wifi-networks">
+<span id="moving-between-wifi"></span><h2>Moving Vector between WiFi networks<a class="headerlink" href="#moving-vector-between-wifi-networks" title="Permalink to this headline">¶</a></h2>
+<p>When you move Vector from one WiFi network to another (using the Vector App),
+or if your Vector’s IP changes,  you will also need to make some changes to
+your SDK setup. To assist in this migration, <code class="docutils literal notranslate"><span class="pre">configure.py</span></code> provides a <code class="docutils literal notranslate"><span class="pre">-u</span></code>
+parameter to quickly reconnect to Vector.</p>
+<p>To update your connection, you will need to find the IP address on
+Vector’s face, and the serial number of the robot you are updating.
+Then from your terminal run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">configure</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">u</span> <span class="s2">&quot;&lt;your_new_ip&gt;&quot;</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;&lt;your_robot_serial_number&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-multiple-vectors">
+<h2>Using multiple Vectors<a class="headerlink" href="#using-multiple-vectors" title="Permalink to this headline">¶</a></h2>
+<p>If your device is configured to use more than one robot, you can specify
+which robot you want to use by passing its serial number as a parameter
+to the Robot constructor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="s2">&quot;00e20142&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+  <span class="n">robot</span><span class="o">.</span><span class="n">anim</span><span class="o">.</span><span class="n">play_animation</span><span class="p">(</span><span class="s1">&#39;anim_pounce_success_02&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Alternatively, you can pass a <code class="docutils literal notranslate"><span class="pre">--serial</span></code> flag on the command
+line, and <code class="docutils literal notranslate"><span class="pre">anki_vector.util.parse_command_args</span></code> will parse out
+the serial number:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="mi">01</span><span class="n">_hello_world</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">serial</span> <span class="mf">00e20142</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-anki-robot-serial">
+<h2>Set ANKI_ROBOT_SERIAL<a class="headerlink" href="#set-anki-robot-serial" title="Permalink to this headline">¶</a></h2>
+<p>In order to avoid entering Vector’s serial number for each program run,
+you can create environment variable <code class="docutils literal notranslate"><span class="pre">ANKI_ROBOT_SERIAL</span></code>
+and set it to Vector’s serial number:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">ANKI_ROBOT_SERIAL</span><span class="o">=</span><span class="mf">00e20100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-anki-robot-host-and-vector-robot-name">
+<h2>Set ANKI_ROBOT_HOST and VECTOR_ROBOT_NAME<a class="headerlink" href="#set-anki-robot-host-and-vector-robot-name" title="Permalink to this headline">¶</a></h2>
+<p>When running <code class="docutils literal notranslate"><span class="pre">configure.py</span></code>, you must provide Vector’s ip and name.
+To avoid typing these in, you can instead create environment variables
+ANKI_ROBOT_HOST and VECTOR_ROBOT_NAME. Then <code class="docutils literal notranslate"><span class="pre">configure.py</span></code> will automatically pick
+up those settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">ANKI_ROBOT_HOST</span><span class="o">=</span><span class="s2">&quot;192.168.42.42&quot;</span>
+<span class="n">export</span> <span class="n">VECTOR_ROBOT_NAME</span><span class="o">=</span><span class="n">Vector</span><span class="o">-</span><span class="n">A1B2</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://www.anki.com/en-us/company/terms-and-conditions">Terms and Conditions</a> and <a class="reference external" href="https://www.anki.com/en-us/company/privacy">Privacy Policy</a></p>
+<p><a class="reference external" href="http://developer.anki.com">Click here to return to the Anki Developer website.</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getstarted.html" class="btn btn-neutral float-right" title="Getting Started With the Vector SDK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="troubleshooting.html" class="btn btn-neutral" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

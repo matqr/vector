@@ -1,0 +1,1412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.util &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.viewer" href="anki_vector.viewer.html" />
+    <link rel="prev" title="anki_vector.touch" href="anki_vector.touch.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl.html">anki_vector.opengl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_vector.html">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.util</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.util.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.util">
+<span id="anki-vector-util"></span><h1>anki_vector.util<a class="headerlink" href="#module-anki_vector.util" title="Permalink to this headline">¶</a></h1>
+<p>Utility functions and classes for the Vector SDK.</p>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.angle_z_to_quaternion" title="anki_vector.util.angle_z_to_quaternion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angle_z_to_quaternion</span></code></a>(angle_z)</td>
+<td>This function converts an angle in the z axis (Euler angle z component) to a quaternion.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.degrees" title="anki_vector.util.degrees"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees</span></code></a>(degrees)</td>
+<td>An Angle instance set to the specified number of degrees.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.distance_inches" title="anki_vector.util.distance_inches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">distance_inches</span></code></a>(distance_inches)</td>
+<td>Returns an <a class="reference internal" href="#anki_vector.util.Distance" title="anki_vector.util.Distance"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Distance</span></code></a> instance set to the specified number of inches.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.distance_mm" title="anki_vector.util.distance_mm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">distance_mm</span></code></a>(distance_mm)</td>
+<td>Returns an <a class="reference internal" href="#anki_vector.util.Distance" title="anki_vector.util.Distance"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Distance</span></code></a> instance set to the specified number of millimeters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.get_class_logger" title="anki_vector.util.get_class_logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_class_logger</span></code></a>(module,&nbsp;obj)</td>
+<td>Helper to create logger for a given class (and module).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.parse_command_args" title="anki_vector.util.parse_command_args"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_command_args</span></code></a>([parser])</td>
+<td>Parses command line arguments.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.radians" title="anki_vector.util.radians"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radians</span></code></a>(radians)</td>
+<td>An Angle instance set to the specified number of radians.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.setup_basic_logging" title="anki_vector.util.setup_basic_logging"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_basic_logging</span></code></a>([custom_handler,&nbsp;…])</td>
+<td>Helper to perform basic setup of the Python logger.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.speed_mmps" title="anki_vector.util.speed_mmps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">speed_mmps</span></code></a>(speed_mmps)</td>
+<td><a class="reference internal" href="#anki_vector.util.Speed" title="anki_vector.util.Speed"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Speed</span></code></a> instance set to the specified millimeters per second speed.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.Angle" title="anki_vector.util.Angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>([radians,&nbsp;degrees])</td>
+<td>Represents an angle.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.BaseOverlay" title="anki_vector.util.BaseOverlay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseOverlay</span></code></a>(line_thickness,&nbsp;line_color)</td>
+<td>A base overlay is used as a base class for other forms of overlays that can be drawn on top of an image.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.Component" title="anki_vector.util.Component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Component</span></code></a>(robot)</td>
+<td>Base class for all components.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.Distance" title="anki_vector.util.Distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Distance</span></code></a>([distance_mm,&nbsp;distance_inches])</td>
+<td>Represents a distance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.ImageRect" title="anki_vector.util.ImageRect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImageRect</span></code></a>(x_top_left,&nbsp;y_top_left,&nbsp;width,&nbsp;height)</td>
+<td>Image coordinates and size</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.Matrix44" title="anki_vector.util.Matrix44"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix44</span></code></a>(m00,&nbsp;m10,&nbsp;m20,&nbsp;m30,&nbsp;m01,&nbsp;m11,&nbsp;m21,&nbsp;…)</td>
+<td>A 4x4 Matrix for representing the rotation and/or position of an object in the world.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pose</span></code></a>(x,&nbsp;y,&nbsp;z[,&nbsp;q0,&nbsp;q1,&nbsp;q2,&nbsp;q3,&nbsp;angle_z,&nbsp;…])</td>
+<td>Represents where an object is in the world.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.Position" title="anki_vector.util.Position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Position</span></code></a>(x,&nbsp;y,&nbsp;z)</td>
+<td>Represents the position of an object in the world.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.Quaternion" title="anki_vector.util.Quaternion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quaternion</span></code></a>([q0,&nbsp;q1,&nbsp;q2,&nbsp;q3,&nbsp;angle_z])</td>
+<td>Represents the rotation of an object in the world.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.RectangleOverlay" title="anki_vector.util.RectangleOverlay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RectangleOverlay</span></code></a>(width,&nbsp;height[,&nbsp;…])</td>
+<td>A rectangle that can be drawn on top of a given image.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.Speed" title="anki_vector.util.Speed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Speed</span></code></a>([speed_mmps])</td>
+<td>Represents a speed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.util.Vector2" title="anki_vector.util.Vector2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2</span></code></a>(x,&nbsp;y)</td>
+<td>Represents a 2D Vector (type/units aren’t specified).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.util.Vector3" title="anki_vector.util.Vector3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector3</span></code></a>(x,&nbsp;y,&nbsp;z)</td>
+<td>Represents a 3D Vector (type/units aren’t specified).</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="anki_vector.util.Angle">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Angle</code><span class="sig-paren">(</span><em>radians=None</em>, <em>degrees=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an angle.</p>
+<p>Use the <a class="reference internal" href="#anki_vector.util.degrees" title="anki_vector.util.degrees"><code class="xref py py-func docutils literal notranslate"><span class="pre">degrees()</span></code></a> or <a class="reference internal" href="#anki_vector.util.radians" title="anki_vector.util.radians"><code class="xref py py-func docutils literal notranslate"><span class="pre">radians()</span></code></a> convenience methods to generate
+an Angle instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>radians</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – The number of radians the angle should represent
+(cannot be combined with <code class="docutils literal notranslate"><span class="pre">degrees</span></code>)</li>
+<li><strong>degrees</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – The number of degress the angle should represent
+(cannot be combined with <code class="docutils literal notranslate"><span class="pre">radians</span></code>)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.util.Angle.degrees">
+<code class="descname">degrees</code><a class="headerlink" href="#anki_vector.util.Angle.degrees" title="Permalink to this definition">¶</a></dt>
+<dd><p>The angle in degrees.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Angle.radians">
+<code class="descname">radians</code><a class="headerlink" href="#anki_vector.util.Angle.radians" title="Permalink to this definition">¶</a></dt>
+<dd><p>The angle in radians.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.BaseOverlay">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">BaseOverlay</code><span class="sig-paren">(</span><em>line_thickness</em>, <em>line_color</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.BaseOverlay" title="Permalink to this definition">¶</a></dt>
+<dd><p>A base overlay is used as a base class for other forms of overlays that can be drawn on top of an image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>line_thickness</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The thickness of the line being drawn.</li>
+<li><strong>line_color</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>) – The color of the line to be drawn.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.util.BaseOverlay.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#anki_vector.util.BaseOverlay.line_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color of the line to be drawn.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.BaseOverlay.line_thickness">
+<code class="descname">line_thickness</code><a class="headerlink" href="#anki_vector.util.BaseOverlay.line_thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>The thickness of the line being drawn.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Component">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Component</code><span class="sig-paren">(</span><em>robot</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all components.</p>
+<dl class="attribute">
+<dt id="anki_vector.util.Component.grpc_interface">
+<code class="descname">grpc_interface</code><a class="headerlink" href="#anki_vector.util.Component.grpc_interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>A direct reference to the connected aiogrpc interface.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Distance">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Distance</code><span class="sig-paren">(</span><em>distance_mm=None</em>, <em>distance_inches=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a distance.</p>
+<p>The class allows distances to be returned in either millimeters or inches.</p>
+<p>Use the <a class="reference internal" href="#anki_vector.util.distance_inches" title="anki_vector.util.distance_inches"><code class="xref py py-func docutils literal notranslate"><span class="pre">distance_inches()</span></code></a> or <a class="reference internal" href="#anki_vector.util.distance_mm" title="anki_vector.util.distance_mm"><code class="xref py py-func docutils literal notranslate"><span class="pre">distance_mm()</span></code></a> convenience methods to generate
+a Distance instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>distance_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – The number of millimeters the distance should
+represent (cannot be combined with <code class="docutils literal notranslate"><span class="pre">distance_inches</span></code>).</li>
+<li><strong>distance_inches</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – The number of inches the distance should
+represent (cannot be combined with <code class="docutils literal notranslate"><span class="pre">distance_mm</span></code>).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.util.Distance.distance_mm">
+<code class="descname">distance_mm</code><a class="headerlink" href="#anki_vector.util.Distance.distance_mm" title="Permalink to this definition">¶</a></dt>
+<dd><p>The distance in millimeters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.ImageRect">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">ImageRect</code><span class="sig-paren">(</span><em>x_top_left</em>, <em>y_top_left</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.ImageRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Image coordinates and size</p>
+<dl class="attribute">
+<dt id="anki_vector.util.ImageRect.height">
+<code class="descname">height</code><a class="headerlink" href="#anki_vector.util.ImageRect.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the object from when it was last visible within Vector’s camera view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.ImageRect.width">
+<code class="descname">width</code><a class="headerlink" href="#anki_vector.util.ImageRect.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the object from when it was last visible within Vector’s camera view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.ImageRect.x_top_left">
+<code class="descname">x_top_left</code><a class="headerlink" href="#anki_vector.util.ImageRect.x_top_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>The top left x value of where the object was last visible within Vector’s camera view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.ImageRect.y_top_left">
+<code class="descname">y_top_left</code><a class="headerlink" href="#anki_vector.util.ImageRect.y_top_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>The top left y value of where the object was last visible within Vector’s camera view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Matrix44">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Matrix44</code><span class="sig-paren">(</span><em>m00</em>, <em>m10</em>, <em>m20</em>, <em>m30</em>, <em>m01</em>, <em>m11</em>, <em>m21</em>, <em>m31</em>, <em>m02</em>, <em>m12</em>, <em>m22</em>, <em>m32</em>, <em>m03</em>, <em>m13</em>, <em>m23</em>, <em>m33</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Matrix44" title="Permalink to this definition">¶</a></dt>
+<dd><p>A 4x4 Matrix for representing the rotation and/or position of an object in the world.</p>
+<p>Can be generated from a <a class="reference internal" href="#anki_vector.util.Quaternion" title="anki_vector.util.Quaternion"><code class="xref py py-class docutils literal notranslate"><span class="pre">Quaternion</span></code></a> for a pure rotation matrix, or
+combined with a position for a full translation matrix, as done by
+<a class="reference internal" href="#anki_vector.util.Pose.to_matrix" title="anki_vector.util.Pose.to_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Pose.to_matrix()</span></code></a>.</p>
+<dl class="attribute">
+<dt id="anki_vector.util.Matrix44.forward_xyz">
+<code class="descname">forward_xyz</code><a class="headerlink" href="#anki_vector.util.Matrix44.forward_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple of 3 floats</em> – The x,y,z components representing the matrix’s forward vector.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Matrix44.in_column_order">
+<code class="descname">in_column_order</code><a class="headerlink" href="#anki_vector.util.Matrix44.in_column_order" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple of 16 floats</em> – The contents of the matrix in column order.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Matrix44.in_row_order">
+<code class="descname">in_row_order</code><a class="headerlink" href="#anki_vector.util.Matrix44.in_row_order" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple of 16 floats</em> – The contents of the matrix in row order.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Matrix44.left_xyz">
+<code class="descname">left_xyz</code><a class="headerlink" href="#anki_vector.util.Matrix44.left_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple of 3 floats</em> – The x,y,z components representing the matrix’s left vector.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Matrix44.pos_xyz">
+<code class="descname">pos_xyz</code><a class="headerlink" href="#anki_vector.util.Matrix44.pos_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple of 3 floats</em> – The x,y,z components representing the matrix’s position vector.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Matrix44.set_forward">
+<code class="descname">set_forward</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Matrix44.set_forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x,y,z components representing the matrix’s forward vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The X component.</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Y component.</li>
+<li><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Z component.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Matrix44.set_left">
+<code class="descname">set_left</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Matrix44.set_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x,y,z components representing the matrix’s left vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The X component.</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Y component.</li>
+<li><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Z component.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Matrix44.set_pos">
+<code class="descname">set_pos</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Matrix44.set_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x,y,z components representing the matrix’s position vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The X component.</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Y component.</li>
+<li><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Z component.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Matrix44.set_up">
+<code class="descname">set_up</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Matrix44.set_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x,y,z components representing the matrix’s up vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The X component.</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Y component.</li>
+<li><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The Z component.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Matrix44.tabulated_string">
+<code class="descname">tabulated_string</code><a class="headerlink" href="#anki_vector.util.Matrix44.tabulated_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>A multi-line string formatted with tabs to show the matrix contents.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Matrix44.up_xyz">
+<code class="descname">up_xyz</code><a class="headerlink" href="#anki_vector.util.Matrix44.up_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple of 3 floats</em> – The x,y,z components representing the matrix’s up vector.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Pose">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Pose</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em>, <em>q0=None</em>, <em>q1=None</em>, <em>q2=None</em>, <em>q3=None</em>, <em>angle_z=None</em>, <em>origin_id=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents where an object is in the world.</p>
+<p>Whenever Vector is delocalized (i.e. whenever Vector no longer knows
+where he is - e.g. when he’s picked up), Vector creates a new pose starting at
+(0,0,0) with no rotation, with origin_id incremented to show that these poses
+cannot be compared with earlier ones. As Vector drives around, his pose (and the
+pose of other objects he observes - e.g. faces, his LightCube, charger, etc.) is relative to this
+initial position and orientation.</p>
+<p>The coordinate space is relative to Vector, where Vector’s origin is the
+point on the ground between Vector’s two front wheels. The X axis is Vector’s forward direction,
+the Y axis is to Vector’s left, and the Z axis is up.</p>
+<p>Only poses of the same origin_id can safely be compared or operated on.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">pose</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">Pose</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">angle_z</span><span class="o">=</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">Angle</span><span class="p">(</span><span class="n">degrees</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">behavior</span><span class="o">.</span><span class="n">go_to_pose</span><span class="p">(</span><span class="n">pose</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="anki_vector.util.Pose.define_pose_relative_this">
+<code class="descname">define_pose_relative_this</code><span class="sig-paren">(</span><em>new_pose</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Pose.define_pose_relative_this" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new pose such that new_pose’s origin is now at the location of this pose.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new_pose</strong> (<a class="reference internal" href="#anki_vector.util.Pose" title="anki_vector.util.Pose"><em>anki_vector.util.Pose</em></a>) – The pose which origin is being changed.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference internal" href="#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Pose</span></code></a> object for which the origin was this pose’s origin.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Pose.is_comparable">
+<code class="descname">is_comparable</code><span class="sig-paren">(</span><em>other_pose</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Pose.is_comparable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether these two poses are comparable.</p>
+<p>Poses are comparable if they’re valid and having matching origin IDs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other_pose</strong> – The other pose to compare against. Type is Pose.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the two poses are comparable, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Pose.is_valid">
+<code class="descname">is_valid</code><a class="headerlink" href="#anki_vector.util.Pose.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if this is a valid, usable pose.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Pose.origin_id">
+<code class="descname">origin_id</code><a class="headerlink" href="#anki_vector.util.Pose.origin_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>An ID maintained by the robot which represents which coordinate frame this pose is in.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Pose.position">
+<code class="descname">position</code><a class="headerlink" href="#anki_vector.util.Pose.position" title="Permalink to this definition">¶</a></dt>
+<dd><p>The position component of this pose.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.util.Position" title="anki_vector.util.Position"><code class="xref py py-class docutils literal notranslate"><span class="pre">Position</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Pose.rotation">
+<code class="descname">rotation</code><a class="headerlink" href="#anki_vector.util.Pose.rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rotation component of this pose.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.util.Quaternion" title="anki_vector.util.Quaternion"><code class="xref py py-class docutils literal notranslate"><span class="pre">Quaternion</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Pose.to_matrix">
+<code class="descname">to_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Pose.to_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the Pose to a Matrix44.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A matrix representing this Pose’s position and rotation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.util.Matrix44" title="anki_vector.util.Matrix44"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix44</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Pose.to_proto_pose_struct">
+<code class="descname">to_proto_pose_struct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Pose.to_proto_pose_struct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the Pose into the robot’s messaging pose format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">PoseStruct</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Position">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Position</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents the position of an object in the world.</p>
+<p>A position consists of its x, y and z values in millimeters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – X position in millimeters</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Y position in millimeters</li>
+<li><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Z position in millimeters</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Quaternion">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Quaternion</code><span class="sig-paren">(</span><em>q0=None</em>, <em>q1=None</em>, <em>q2=None</em>, <em>q3=None</em>, <em>angle_z=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Quaternion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents the rotation of an object in the world.</p>
+<dl class="attribute">
+<dt id="anki_vector.util.Quaternion.angle_z">
+<code class="descname">angle_z</code><a class="headerlink" href="#anki_vector.util.Quaternion.angle_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>An Angle instance representing the z Euler component of the object’s rotation.</p>
+<p>Defined as the rotation in the z axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.util.Angle" title="anki_vector.util.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Quaternion.q0">
+<code class="descname">q0</code><a class="headerlink" href="#anki_vector.util.Quaternion.q0" title="Permalink to this definition">¶</a></dt>
+<dd><p>The q0 (w) value of the quaternion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Quaternion.q0_q1_q2_q3">
+<code class="descname">q0_q1_q2_q3</code><a class="headerlink" href="#anki_vector.util.Quaternion.q0_q1_q2_q3" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple of float</em> – Contains all elements of the quaternion (q0,q1,q2,q3)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Quaternion.q1">
+<code class="descname">q1</code><a class="headerlink" href="#anki_vector.util.Quaternion.q1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The q1 (i) value of the quaternion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Quaternion.q2">
+<code class="descname">q2</code><a class="headerlink" href="#anki_vector.util.Quaternion.q2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The q2 (j) value of the quaternion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Quaternion.q3">
+<code class="descname">q3</code><a class="headerlink" href="#anki_vector.util.Quaternion.q3" title="Permalink to this definition">¶</a></dt>
+<dd><p>The q3 (k) value of the quaternion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Quaternion.to_matrix">
+<code class="descname">to_matrix</code><span class="sig-paren">(</span><em>pos_x=0.0</em>, <em>pos_y=0.0</em>, <em>pos_z=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Quaternion.to_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the Quaternion to a 4x4 matrix representing this rotation.</p>
+<p>A position can also be provided to generate a full translation matrix.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pos_x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The x component for the position.</li>
+<li><strong>pos_y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The y component for the position.</li>
+<li><strong>pos_z</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The z component for the position.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A matrix representing this Quaternion’s
+rotation, with the provided position (which defaults to 0,0,0).</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#anki_vector.util.Matrix44" title="anki_vector.util.Matrix44"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Matrix44</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.RectangleOverlay">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">RectangleOverlay</code><span class="sig-paren">(</span><em>width</em>, <em>height</em>, <em>line_thickness=5</em>, <em>line_color=(255</em>, <em>0</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.RectangleOverlay" title="Permalink to this definition">¶</a></dt>
+<dd><p>A rectangle that can be drawn on top of a given image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The width of the rectangle to be drawn.</li>
+<li><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The height of the rectangle to be drawn.</li>
+<li><strong>line_thickness</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The thickness of the line being drawn.</li>
+<li><strong>line_color</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>) – The color of the line to be drawn.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.util.RectangleOverlay.apply_overlay">
+<code class="descname">apply_overlay</code><span class="sig-paren">(</span><em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.RectangleOverlay.apply_overlay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a rectangle on top of the given image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">None</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.RectangleOverlay.height">
+<code class="descname">height</code><a class="headerlink" href="#anki_vector.util.RectangleOverlay.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the rectangle to be drawn.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.RectangleOverlay.width">
+<code class="descname">width</code><a class="headerlink" href="#anki_vector.util.RectangleOverlay.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the rectangle to be drawn.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Speed">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Speed</code><span class="sig-paren">(</span><em>speed_mmps=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a speed.</p>
+<p>This class allows speeds to be measured in millimeters per second.</p>
+<p>Use <a class="reference internal" href="#anki_vector.util.speed_mmps" title="anki_vector.util.speed_mmps"><code class="xref py py-func docutils literal notranslate"><span class="pre">speed_mmps()</span></code></a> convenience methods to generate
+a Speed instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>speed_mmps</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – The number of millimeters per second the speed
+should represent.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.util.Speed.speed_mmps">
+<code class="descname">speed_mmps</code><a class="headerlink" href="#anki_vector.util.Speed.speed_mmps" title="Permalink to this definition">¶</a></dt>
+<dd><p>The speed in millimeters per second (mmps).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Vector2">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Vector2</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Vector2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a 2D Vector (type/units aren’t specified).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – X component</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Y component</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.util.Vector2.set_to">
+<code class="descname">set_to</code><span class="sig-paren">(</span><em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Vector2.set_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the x and y components of the given Vector2 instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rhs</strong> – The right-hand-side of this assignment - the
+source Vector2 to copy into this Vector2 instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector2.x">
+<code class="descname">x</code><a class="headerlink" href="#anki_vector.util.Vector2.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>The x component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector2.x_y">
+<code class="descname">x_y</code><a class="headerlink" href="#anki_vector.util.Vector2.x_y" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple (float, float)</em> – The X, Y elements of the Vector2 (x,y)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector2.y">
+<code class="descname">y</code><a class="headerlink" href="#anki_vector.util.Vector2.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>The y component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.util.Vector3">
+<em class="property">class </em><code class="descclassname">anki_vector.util.</code><code class="descname">Vector3</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Vector3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a 3D Vector (type/units aren’t specified).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – X component</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Y component</li>
+<li><strong>z</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Z component</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.util.Vector3.cross">
+<code class="descname">cross</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Vector3.cross" title="Permalink to this definition">¶</a></dt>
+<dd><p>The cross product of this and another Vector3 instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Vector3.dot">
+<code class="descname">dot</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Vector3.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dot product of this and another Vector3 instance</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector3.magnitude">
+<code class="descname">magnitude</code><a class="headerlink" href="#anki_vector.util.Vector3.magnitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>The magnitude of the Vector3 instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector3.magnitude_squared">
+<code class="descname">magnitude_squared</code><a class="headerlink" href="#anki_vector.util.Vector3.magnitude_squared" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float</em> – The magnitude of the Vector3 instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector3.normalized">
+<code class="descname">normalized</code><a class="headerlink" href="#anki_vector.util.Vector3.normalized" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Vector3 instance with the same direction and unit magnitude</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.util.Vector3.set_to">
+<code class="descname">set_to</code><span class="sig-paren">(</span><em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.Vector3.set_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the x, y and z components of the given Vector3 instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rhs</strong> – The right-hand-side of this assignment - the
+source Vector3 to copy into this Vector3 instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector3.x">
+<code class="descname">x</code><a class="headerlink" href="#anki_vector.util.Vector3.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>The x component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector3.x_y_z">
+<code class="descname">x_y_z</code><a class="headerlink" href="#anki_vector.util.Vector3.x_y_z" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple (float, float, float)</em> – The X, Y, Z elements of the Vector3 (x,y,z)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector3.y">
+<code class="descname">y</code><a class="headerlink" href="#anki_vector.util.Vector3.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>The y component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.util.Vector3.z">
+<code class="descname">z</code><a class="headerlink" href="#anki_vector.util.Vector3.z" title="Permalink to this definition">¶</a></dt>
+<dd><p>The z component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.angle_z_to_quaternion">
+<code class="descclassname">anki_vector.util.</code><code class="descname">angle_z_to_quaternion</code><span class="sig-paren">(</span><em>angle_z</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.angle_z_to_quaternion" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function converts an angle in the z axis (Euler angle z component) to a quaternion.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angle_z</strong> (<a class="reference internal" href="#anki_vector.util.Angle" title="anki_vector.util.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a>) – The z axis angle.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="docutils">
+<dt>A tuple with all the members</dt>
+<dd>of a quaternion defined by angle_z.</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">q0, q1, q2, q3 (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)">float</a>, <a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)">float</a>, <a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)">float</a>, <a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)">float</a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.degrees">
+<code class="descclassname">anki_vector.util.</code><code class="descname">degrees</code><span class="sig-paren">(</span><em>degrees</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.degrees" title="Permalink to this definition">¶</a></dt>
+<dd><p>An Angle instance set to the specified number of degrees.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.util.Angle" title="anki_vector.util.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.distance_mm">
+<code class="descclassname">anki_vector.util.</code><code class="descname">distance_mm</code><span class="sig-paren">(</span><em>distance_mm</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.distance_mm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference internal" href="#anki_vector.util.Distance" title="anki_vector.util.Distance"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Distance</span></code></a> instance set to the specified number of millimeters.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.distance_inches">
+<code class="descclassname">anki_vector.util.</code><code class="descname">distance_inches</code><span class="sig-paren">(</span><em>distance_inches</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.distance_inches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference internal" href="#anki_vector.util.Distance" title="anki_vector.util.Distance"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Distance</span></code></a> instance set to the specified number of inches.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.get_class_logger">
+<code class="descclassname">anki_vector.util.</code><code class="descname">get_class_logger</code><span class="sig-paren">(</span><em>module</em>, <em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.get_class_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper to create logger for a given class (and module).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">get_class_logger</span><span class="p">(</span><span class="s2">&quot;module_name&quot;</span><span class="p">,</span> <span class="s2">&quot;object_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>module</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The name of the module to which the object belongs.</li>
+<li><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>) – the object that owns the logger.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3.6/library/logging.html#logging.Logger" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Logger</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.parse_command_args">
+<code class="descclassname">anki_vector.util.</code><code class="descname">parse_command_args</code><span class="sig-paren">(</span><em>parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.parse_command_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses command line arguments.</p>
+<p>Attempts to read the robot serial number from the command line arguments. If no serial number
+is specified, we next attempt to read the robot serial number from environment variable ANKI_ROBOT_SERIAL.
+If ANKI_ROBOT_SERIAL is specified, the value will be used as the robot’s serial number.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--new_param&quot;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">parse_command_args</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parser</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/argparse.html#argparse.ArgumentParser" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArgumentParser</span></code></a>]) – To add new command line arguments,
+pass an argparse parser with the new options
+already defined. Leave empty to use the defaults.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.radians">
+<code class="descclassname">anki_vector.util.</code><code class="descname">radians</code><span class="sig-paren">(</span><em>radians</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.radians" title="Permalink to this definition">¶</a></dt>
+<dd><p>An Angle instance set to the specified number of radians.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.util.Angle" title="anki_vector.util.Angle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Angle</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.setup_basic_logging">
+<code class="descclassname">anki_vector.util.</code><code class="descname">setup_basic_logging</code><span class="sig-paren">(</span><em>custom_handler=None</em>, <em>general_log_level=None</em>, <em>target=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.setup_basic_logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper to perform basic setup of the Python logger.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>custom_handler</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/logging.html#logging.Handler" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Handler</span></code></a>]) – provide an external logger for custom logging locations</li>
+<li><strong>general_log_level</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – ‘DEBUG’, ‘INFO’, ‘WARN’, ‘ERROR’ or an equivalent
+constant from the <a class="reference external" href="https://docs.python.org/3.6/library/logging.html#module-logging" title="(in Python v3.6)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> module. If None then a
+value will be read from the VECTOR_LOG_LEVEL environment variable.</li>
+<li><strong>target</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>) – The stream to send the log data to; defaults to stderr</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.util.speed_mmps">
+<code class="descclassname">anki_vector.util.</code><code class="descname">speed_mmps</code><span class="sig-paren">(</span><em>speed_mmps</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.util.speed_mmps" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.util.Speed" title="anki_vector.util.Speed"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Speed</span></code></a> instance set to the specified millimeters per second speed.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.viewer.html" class="btn btn-neutral float-right" title="anki_vector.viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.touch.html" class="btn btn-neutral" title="anki_vector.touch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

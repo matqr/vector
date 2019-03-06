@@ -1,0 +1,624 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.events &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.exceptions" href="anki_vector.exceptions.html" />
+    <link rel="prev" title="anki_vector.connection" href="anki_vector.connection.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl.html">anki_vector.opengl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_vector.html">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.events</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.events.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.events">
+<span id="anki-vector-events"></span><h1>anki_vector.events<a class="headerlink" href="#module-anki_vector.events" title="Permalink to this headline">¶</a></h1>
+<p>Event handler used to make functions subscribe to robot events.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.events.EventHandler" title="anki_vector.events.EventHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EventHandler</span></code></a>()</td>
+<td>Listen for Vector events.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.events.Events" title="anki_vector.events.Events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Events</span></code></a></td>
+<td>List of events available.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="anki_vector.events.EventHandler">
+<em class="property">class </em><code class="descclassname">anki_vector.events.</code><code class="descname">EventHandler</code><a class="headerlink" href="#anki_vector.events.EventHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listen for Vector events.</p>
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop listening for events. Automatically called by the <a class="reference internal" href="anki_vector.robot.html#anki_vector.robot.Robot" title="anki_vector.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.robot.Robot</span></code></a> class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.dispatch_event">
+<code class="descname">dispatch_event</code><span class="sig-paren">(</span><em>event_data</em>, <em>event_type</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.dispatch_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatches event to event listeners.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.dispatch_event_by_name">
+<code class="descname">dispatch_event_by_name</code><span class="sig-paren">(</span><em>event_data</em>, <em>event_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.dispatch_event_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatches event to event listeners by name.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">def</span> <span class="nf">event_listener</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">subscribe_by_name</span><span class="p">(</span><span class="n">event_listener</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">)</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">dispatch_event_by_name</span><span class="p">(</span><span class="s1">&#39;my_event dispatched&#39;</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event_data</strong> – Data to accompany the event.</li>
+<li><strong>event_name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – The name of the event that will result in func being called.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start listening for events. Automatically called by the <a class="reference internal" href="anki_vector.robot.html#anki_vector.robot.Robot" title="anki_vector.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.robot.Robot</span></code></a> class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>connection</strong> (<a class="reference internal" href="anki_vector.connection.html#anki_vector.connection.Connection" title="anki_vector.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a>) – A reference to the connection from the SDK to the robot.</li>
+<li><strong>loop</strong> – The loop to run the event task on.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.subscribe">
+<code class="descname">subscribe</code><span class="sig-paren">(</span><em>func</em>, <em>event_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a method call when the specified event occurs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="kn">from</span> <span class="nn">anki_vector.events</span> <span class="kn">import</span> <span class="n">Events</span>
+<span class="kn">from</span> <span class="nn">anki_vector.util</span> <span class="kn">import</span> <span class="n">degrees</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="n">said_text</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">parse_command_args</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="n">enable_face_detection</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">evt</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">on_robot_observed_face</span><span class="p">(</span><span class="n">event_type</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Vector sees a face&quot;</span><span class="p">)</span>
+        <span class="k">global</span> <span class="n">said_text</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">said_text</span><span class="p">:</span>
+            <span class="n">said_text</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">await</span> <span class="n">robot</span><span class="o">.</span><span class="n">say_text</span><span class="p">(</span><span class="s2">&quot;I see a face!&quot;</span><span class="p">)</span>
+            <span class="n">evt</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+    <span class="c1"># If necessary, move Vector&#39;s Head and Lift to make it easy to see his face</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">behavior</span><span class="o">.</span><span class="n">set_head_angle</span><span class="p">(</span><span class="n">degrees</span><span class="p">(</span><span class="mf">50.0</span><span class="p">))</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">behavior</span><span class="o">.</span><span class="n">set_lift_height</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">on_robot_observed_face</span><span class="p">,</span> <span class="n">Events</span><span class="o">.</span><span class="n">robot_observed_face</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;------ waiting for face events, press ctrl+c to exit early ------&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">evt</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;------ Vector never saw your face! ------&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="n">on_robot_observed_face</span><span class="p">,</span> <span class="n">Events</span><span class="o">.</span><span class="n">robot_observed_face</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Callable" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>) – A method implemented in your code that will be called when the event is fired.</li>
+<li><strong>event_type</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#anki_vector.events.Events" title="anki_vector.events.Events"><code class="xref py py-class docutils literal notranslate"><span class="pre">Events</span></code></a>]) – The enum type of the event that will result in func being called.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.subscribe_by_name">
+<code class="descname">subscribe_by_name</code><span class="sig-paren">(</span><em>func</em>, <em>event_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.subscribe_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive a method call when the specified event occurs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">event_listener</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">unsubscribe_by_name</span><span class="p">(</span><span class="n">event_listener</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">subscribe_by_name</span><span class="p">(</span><span class="n">event_listener</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">)</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">dispatch_event_by_name</span><span class="p">(</span><span class="s1">&#39;my_event dispatched&#39;</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Callable" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>) – A method implemented in your code that will be called when the event is fired.</li>
+<li><strong>event_name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – The name of the event that will result in func being called.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.unsubscribe">
+<code class="descname">unsubscribe</code><span class="sig-paren">(</span><em>func</em>, <em>event_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.unsubscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister a previously subscribed method from an event.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="kn">from</span> <span class="nn">anki_vector.events</span> <span class="kn">import</span> <span class="n">Events</span>
+<span class="kn">from</span> <span class="nn">anki_vector.util</span> <span class="kn">import</span> <span class="n">degrees</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="n">said_text</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">parse_command_args</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="n">enable_face_detection</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">evt</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">on_robot_observed_face</span><span class="p">(</span><span class="n">event_type</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Vector sees a face&quot;</span><span class="p">)</span>
+        <span class="k">global</span> <span class="n">said_text</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">said_text</span><span class="p">:</span>
+            <span class="n">said_text</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">await</span> <span class="n">robot</span><span class="o">.</span><span class="n">say_text</span><span class="p">(</span><span class="s2">&quot;I see a face!&quot;</span><span class="p">)</span>
+            <span class="n">evt</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+    <span class="c1"># If necessary, move Vector&#39;s Head and Lift to make it easy to see his face</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">behavior</span><span class="o">.</span><span class="n">set_head_angle</span><span class="p">(</span><span class="n">degrees</span><span class="p">(</span><span class="mf">50.0</span><span class="p">))</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">behavior</span><span class="o">.</span><span class="n">set_lift_height</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+
+
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">on_robot_observed_face</span><span class="p">,</span> <span class="n">Events</span><span class="o">.</span><span class="n">robot_observed_face</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;------ waiting for face events, press ctrl+c to exit early ------&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">evt</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;------ Vector never saw your face! ------&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="n">on_robot_observed_face</span><span class="p">,</span> <span class="n">Events</span><span class="o">.</span><span class="n">robot_observed_face</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Callable" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>) – The enum type of the event you no longer wish to be called when an event fires.</li>
+<li><strong>event_type</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference internal" href="#anki_vector.events.Events" title="anki_vector.events.Events"><code class="xref py py-class docutils literal notranslate"><span class="pre">Events</span></code></a>]) – The name of the event for which you no longer want to receive a method call.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.events.EventHandler.unsubscribe_by_name">
+<code class="descname">unsubscribe_by_name</code><span class="sig-paren">(</span><em>func</em>, <em>event_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.events.EventHandler.unsubscribe_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister a previously subscribed method from an event.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">event_listener</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">unsubscribe_by_name</span><span class="p">(</span><span class="n">event_listener</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">subscribe_by_name</span><span class="p">(</span><span class="n">event_listener</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">)</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">dispatch_event_by_name</span><span class="p">(</span><span class="s1">&#39;my_event dispatched&#39;</span><span class="p">,</span> <span class="n">event_name</span><span class="o">=</span><span class="s1">&#39;my_event&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Callable" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>) – The method you no longer wish to be called when an event fires.</li>
+<li><strong>event_name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – The name of the event for which you no longer want to receive a method call.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.events.Events">
+<em class="property">class </em><code class="descclassname">anki_vector.events.</code><code class="descname">Events</code><a class="headerlink" href="#anki_vector.events.Events" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of events available.</p>
+<dl class="attribute">
+<dt id="anki_vector.events.Events.audio_send_mode_changed">
+<code class="descname">audio_send_mode_changed</code><em class="property"> = 'audio_send_mode_changed'</em><a class="headerlink" href="#anki_vector.events.Events.audio_send_mode_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event containing changes to the robot’s audio stream source data processing mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.cube_connection_lost">
+<code class="descname">cube_connection_lost</code><em class="property"> = 'cube_connection_lost'</em><a class="headerlink" href="#anki_vector.events.Events.cube_connection_lost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event triggered when an object’s subscribed connection has been lost.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.nav_map_update">
+<code class="descname">nav_map_update</code><em class="property"> = 'nav_map_update'</em><a class="headerlink" href="#anki_vector.events.Events.nav_map_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python event containing nav map data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_appeared">
+<code class="descname">object_appeared</code><em class="property"> = 'object_appeared'</em><a class="headerlink" href="#anki_vector.events.Events.object_appeared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python event triggered when an object first receives robot_observed_object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_available">
+<code class="descname">object_available</code><em class="property"> = 'object_available'</em><a class="headerlink" href="#anki_vector.events.Events.object_available" title="Permalink to this definition">¶</a></dt>
+<dd><p>After the ConnectCube process is started, all available light cubes in range will broadcast an availability message through the Robot.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_disappeared">
+<code class="descname">object_disappeared</code><em class="property"> = 'object_disappeared'</em><a class="headerlink" href="#anki_vector.events.Events.object_disappeared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python event triggered when an object has not received a robot_observed_object for a specified time.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_finished_move">
+<code class="descname">object_finished_move</code><em class="property"> = 'object_finished_move'</em><a class="headerlink" href="#anki_vector.events.Events.object_finished_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python event triggered in response to object_stopped_moving with duration data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_moved">
+<code class="descname">object_moved</code><em class="property"> = 'object_moved'</em><a class="headerlink" href="#anki_vector.events.Events.object_moved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event triggered when an object starts moving.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_observed">
+<code class="descname">object_observed</code><em class="property"> = 'object_observed'</em><a class="headerlink" href="#anki_vector.events.Events.object_observed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python event triggered in response to robot_observed_object with sdk metadata.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_stopped_moving">
+<code class="descname">object_stopped_moving</code><em class="property"> = 'object_stopped_moving'</em><a class="headerlink" href="#anki_vector.events.Events.object_stopped_moving" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event triggered when an object stops moving.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_tapped">
+<code class="descname">object_tapped</code><em class="property"> = 'object_tapped'</em><a class="headerlink" href="#anki_vector.events.Events.object_tapped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event triggered when an object is tapped.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.object_up_axis_changed">
+<code class="descname">object_up_axis_changed</code><em class="property"> = 'object_up_axis_changed'</em><a class="headerlink" href="#anki_vector.events.Events.object_up_axis_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event triggered when an object’s orientation changed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.robot_observed_face">
+<code class="descname">robot_observed_face</code><em class="property"> = 'robot_observed_face'</em><a class="headerlink" href="#anki_vector.events.Events.robot_observed_face" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event for when a face is observed by the robot.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.robot_observed_object">
+<code class="descname">robot_observed_object</code><em class="property"> = 'robot_observed_object'</em><a class="headerlink" href="#anki_vector.events.Events.robot_observed_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event triggered when an object is observed by the robot.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.robot_state">
+<code class="descname">robot_state</code><em class="property"> = 'robot_state'</em><a class="headerlink" href="#anki_vector.events.Events.robot_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event containing changes to the robot’s state.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.events.Events.wake_word">
+<code class="descname">wake_word</code><em class="property"> = 'wake_word'</em><a class="headerlink" href="#anki_vector.events.Events.wake_word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot event triggered when Vector hears “Hey Vector”</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.exceptions.html" class="btn btn-neutral float-right" title="anki_vector.exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.connection.html" class="btn btn-neutral" title="anki_vector.connection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

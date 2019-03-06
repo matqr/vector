@@ -1,0 +1,736 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.connection &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.events" href="anki_vector.events.html" />
+    <link rel="prev" title="anki_vector.color" href="anki_vector.color.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl.html">anki_vector.opengl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_vector.html">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.connection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.connection.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.connection">
+<span id="anki-vector-connection"></span><h1>anki_vector.connection<a class="headerlink" href="#module-anki_vector.connection" title="Permalink to this headline">¶</a></h1>
+<p>Management of the connection to and from Vector.</p>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.connection.on_connection_thread" title="anki_vector.connection.on_connection_thread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_connection_thread</span></code></a>([log_messaging,&nbsp;…])</td>
+<td>A decorator generator used internally to denote which functions will run on the connection thread.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.connection.CONTROL_PRIORITY_LEVEL" title="anki_vector.connection.CONTROL_PRIORITY_LEVEL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONTROL_PRIORITY_LEVEL</span></code></a></td>
+<td>Enum used to specify the priority level for the program.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.connection.Connection" title="anki_vector.connection.Connection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Connection</span></code></a>(name,&nbsp;host,&nbsp;cert_file,&nbsp;guid[,&nbsp;…])</td>
+<td>Creates and maintains a aiogrpc connection including managing the connection thread.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="anki_vector.connection.CONTROL_PRIORITY_LEVEL">
+<em class="property">class </em><code class="descclassname">anki_vector.connection.</code><code class="descname">CONTROL_PRIORITY_LEVEL</code><a class="headerlink" href="#anki_vector.connection.CONTROL_PRIORITY_LEVEL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enum used to specify the priority level for the program.</p>
+<dl class="attribute">
+<dt id="anki_vector.connection.CONTROL_PRIORITY_LEVEL.TOP_PRIORITY_AI">
+<code class="descname">TOP_PRIORITY_AI</code><em class="property"> = 20</em><a class="headerlink" href="#anki_vector.connection.CONTROL_PRIORITY_LEVEL.TOP_PRIORITY_AI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs below Mandatory Physical Reactions such as tucking Vector’s head and arms during a fall,
+yet above Trigger-Word Detection.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.connection.Connection">
+<em class="property">class </em><code class="descclassname">anki_vector.connection.</code><code class="descname">Connection</code><span class="sig-paren">(</span><em>name</em>, <em>host</em>, <em>cert_file</em>, <em>guid</em>, <em>requires_behavior_control=True</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.Connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and maintains a aiogrpc connection including managing the connection thread.
+The connection thread decouples the actual messaging layer from the user’s main thread,
+and requires any network requests to be ran using <a class="reference external" href="https://docs.python.org/3.6/library/asyncio-task.html#asyncio.run_coroutine_threadsafe" title="(in Python v3.6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">asyncio.run_coroutine_threadsafe()</span></code></a>
+to make them run on the other thread. Connection provides two helper functions for running
+a function on the connection thread: <a class="reference internal" href="#anki_vector.connection.Connection.run_coroutine" title="anki_vector.connection.Connection.run_coroutine"><code class="xref py py-func docutils literal notranslate"><span class="pre">run_coroutine()</span></code></a> and
+<a class="reference internal" href="#anki_vector.connection.Connection.run_soon" title="anki_vector.connection.Connection.run_soon"><code class="xref py py-func docutils literal notranslate"><span class="pre">run_soon()</span></code></a>.</p>
+<p>This class may be used to bypass the structures of the python sdk handled by
+<a class="reference internal" href="anki_vector.robot.html#anki_vector.robot.Robot" title="anki_vector.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Robot</span></code></a>, and instead talk to aiogrpc more directly.</p>
+<p>The values for the cert_file location and the guid can be found in your home directory in
+the sdk_config.ini file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="c1"># Connect to your Vector</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s2">&quot;Vector-XXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XX.XX.XX.XX:443&quot;</span><span class="p">,</span> <span class="s2">&quot;/path/to/file.cert&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;guid&gt;&quot;</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="c1"># Run your commands</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">play_animation</span><span class="p">():</span>
+    <span class="c1"># Run your commands</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">Animation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;anim_pounce_success_02&quot;</span><span class="p">)</span>
+    <span class="n">anim_request</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">PlayAnimationRequest</span><span class="p">(</span><span class="n">animation</span><span class="o">=</span><span class="n">anim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">grpc_interface</span><span class="o">.</span><span class="n">PlayAnimation</span><span class="p">(</span><span class="n">anim_request</span><span class="p">)</span> <span class="c1"># This needs to be run in an asyncio loop</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">play_animation</span><span class="p">())</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="c1"># Close the connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Vector’s name in the format of “Vector-XXXX”.</li>
+<li><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The IP address and port of Vector in the format “XX.XX.XX.XX:443”.</li>
+<li><strong>cert_file</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The location of the certificate file on disk.</li>
+<li><strong>guid</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Your robot’s unique secret key.</li>
+<li><strong>requires_behavior_control</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – True if the connection requires behavior control.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.connection.Connection.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.Connection.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cleanup the connection, and shutdown all the even handlers.</p>
+<p>Usually this should be invoked by the Robot class when it closes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="c1"># Connect to your Vector</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s2">&quot;Vector-XXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XX.XX.XX.XX:443&quot;</span><span class="p">,</span> <span class="s2">&quot;/path/to/file.cert&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;guid&gt;&quot;</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="c1"># Run your commands</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">play_animation</span><span class="p">():</span>
+    <span class="c1"># Run your commands</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">Animation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;anim_pounce_success_02&quot;</span><span class="p">)</span>
+    <span class="n">anim_request</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">PlayAnimationRequest</span><span class="p">(</span><span class="n">animation</span><span class="o">=</span><span class="n">anim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">grpc_interface</span><span class="o">.</span><span class="n">PlayAnimation</span><span class="p">(</span><span class="n">anim_request</span><span class="p">)</span> <span class="c1"># This needs to be run in an asyncio loop</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">play_animation</span><span class="p">())</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="c1"># Close the connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.connection.Connection.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>timeout=10.0</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.Connection.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to Vector. This will start the connection thread which handles all messages
+between Vector and Python.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="c1"># Connect to your Vector</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s2">&quot;Vector-XXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XX.XX.XX.XX:443&quot;</span><span class="p">,</span> <span class="s2">&quot;/path/to/file.cert&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;guid&gt;&quot;</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="c1"># Run your commands</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">play_animation</span><span class="p">():</span>
+    <span class="c1"># Run your commands</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">Animation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;anim_pounce_success_02&quot;</span><span class="p">)</span>
+    <span class="n">anim_request</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">PlayAnimationRequest</span><span class="p">(</span><span class="n">animation</span><span class="o">=</span><span class="n">anim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">grpc_interface</span><span class="o">.</span><span class="n">PlayAnimation</span><span class="p">(</span><span class="n">anim_request</span><span class="p">)</span> <span class="c1"># This needs to be run in an asyncio loop</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">play_animation</span><span class="p">())</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="c1"># Close the connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The time allotted to attempt a connection, in seconds.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">None</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.connection.Connection.control_granted_event">
+<code class="descname">control_granted_event</code><a class="headerlink" href="#anki_vector.connection.Connection.control_granted_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>This provides an <a class="reference external" href="https://docs.python.org/3.6/library/asyncio-sync.html#asyncio.Event" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio.Event</span></code></a> that a user may <code class="xref py py-func docutils literal notranslate"><span class="pre">wait()</span></code> upon to
+detect when Vector has given control of the behavior system to the SDK program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">wait_for_control</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">):</span>
+    <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">control_granted_event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="o">//</span> <span class="n">Run</span> <span class="n">commands</span> <span class="n">that</span> <span class="n">require</span> <span class="n">behavior</span> <span class="n">control</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.connection.Connection.control_lost_event">
+<code class="descname">control_lost_event</code><a class="headerlink" href="#anki_vector.connection.Connection.control_lost_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>This provides an <a class="reference external" href="https://docs.python.org/3.6/library/asyncio-sync.html#asyncio.Event" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio.Event</span></code></a> that a user may <code class="xref py py-func docutils literal notranslate"><span class="pre">wait()</span></code> upon to
+detect when Vector has taken control of the behavior system at a higher priority.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">auto_reconnect</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">):</span>
+    <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">control_lost_event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">request_control</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.connection.Connection.grpc_interface">
+<code class="descname">grpc_interface</code><a class="headerlink" href="#anki_vector.connection.Connection.grpc_interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>A direct reference to the connected aiogrpc interface.</p>
+<p>This may be used to directly call grpc messages bypassing <a class="reference internal" href="anki_vector.html#anki_vector.Robot" title="anki_vector.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.Robot</span></code></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="c1"># Connect to your Vector</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">(</span><span class="s2">&quot;Vector-XXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XX.XX.XX.XX:443&quot;</span><span class="p">,</span> <span class="s2">&quot;/path/to/file.cert&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;guid&gt;&quot;</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="c1"># Run your commands</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">play_animation</span><span class="p">():</span>
+    <span class="c1"># Run your commands</span>
+    <span class="n">anim</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">Animation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;anim_pounce_success_02&quot;</span><span class="p">)</span>
+    <span class="n">anim_request</span> <span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">messaging</span><span class="o">.</span><span class="n">protocol</span><span class="o">.</span><span class="n">PlayAnimationRequest</span><span class="p">(</span><span class="n">animation</span><span class="o">=</span><span class="n">anim</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">grpc_interface</span><span class="o">.</span><span class="n">PlayAnimation</span><span class="p">(</span><span class="n">anim_request</span><span class="p">)</span> <span class="c1"># This needs to be run in an asyncio loop</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">play_animation</span><span class="p">())</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="c1"># Close the connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExternalInterfaceStub</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.connection.Connection.loop">
+<code class="descname">loop</code><a class="headerlink" href="#anki_vector.connection.Connection.loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>A direct reference to the loop on the connection thread.
+Can be used to run functions in on thread.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">connection_function</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m running in the connection thread event loop.&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">run_coroutine_threadsafe</span><span class="p">(</span><span class="n">connection_function</span><span class="p">(),</span> <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">loop</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEventLoop</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The loop running inside the connection thread</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.connection.Connection.release_control">
+<code class="descname">release_control</code><span class="sig-paren">(</span><em>timeout=10.0</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.Connection.release_control" title="Permalink to this definition">¶</a></dt>
+<dd><p>Explicitly request control. Typically used after detecting <a class="reference internal" href="#anki_vector.connection.Connection.control_lost_event" title="anki_vector.connection.Connection.control_lost_event"><code class="xref py py-func docutils literal notranslate"><span class="pre">control_lost_event()</span></code></a>.</p>
+<p>To be able to directly control Vector’s motors, override his screen, play an animation, etc.,
+the <a class="reference internal" href="#anki_vector.connection.Connection" title="anki_vector.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> will need behavior control. This function will acquire control
+of Vector’s behavior system. This will raise a <code class="xref py py-class docutils literal notranslate"><span class="pre">VectorControlTimeoutException</span></code> if it fails
+to receive a control_lost event before the timeout.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">wait_for_control</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">):</span>
+    <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">control_granted_event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="o">//</span> <span class="n">Run</span> <span class="n">commands</span> <span class="n">that</span> <span class="n">require</span> <span class="n">behavior</span> <span class="n">control</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">release_control</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The time allotted to attempt to release control, in seconds.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.connection.Connection.request_control">
+<code class="descname">request_control</code><span class="sig-paren">(</span><em>timeout=10.0</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.Connection.request_control" title="Permalink to this definition">¶</a></dt>
+<dd><p>Explicitly request behavior control. Typically used after detecting <a class="reference internal" href="#anki_vector.connection.Connection.control_lost_event" title="anki_vector.connection.Connection.control_lost_event"><code class="xref py py-func docutils literal notranslate"><span class="pre">control_lost_event()</span></code></a>.</p>
+<p>To be able to directly control Vector’s motors, override his screen, play an animation, etc.,
+the <a class="reference internal" href="#anki_vector.connection.Connection" title="anki_vector.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> will need behavior control. This function will acquire control
+of Vector’s behavior system. This will raise a <code class="xref py py-class docutils literal notranslate"><span class="pre">VectorControlTimeoutException</span></code> if it fails
+to gain control before the timeout.</p>
+<p>For more information about behavior control, see <a class="reference internal" href="anki_vector.behavior.html#behavior"><span class="std std-ref">behavior</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">auto_reconnect</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">Connection</span><span class="p">):</span>
+    <span class="n">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">control_lost_event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">request_control</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The time allotted to attempt a connection, in seconds.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.connection.Connection.requires_behavior_control">
+<code class="descname">requires_behavior_control</code><a class="headerlink" href="#anki_vector.connection.Connection.requires_behavior_control" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the <a class="reference internal" href="#anki_vector.connection.Connection" title="anki_vector.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> requires behavior control.</p>
+<p>To be able to directly control Vector’s motors, override his screen, play an animation, etc.,
+the <a class="reference internal" href="#anki_vector.connection.Connection" title="anki_vector.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> will need behavior control. This boolean signifies that
+the <a class="reference internal" href="#anki_vector.connection.Connection" title="anki_vector.connection.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> will try to maintain control of Vector’s behavior system even after losing
+control to higher priority robot behaviors such as returning home to charge a low battery.</p>
+<p>For more information about behavior control, see <a class="reference internal" href="anki_vector.behavior.html#behavior"><span class="std std-ref">behavior</span></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="n">requires_behavior_control</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">event_type</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">await</span> <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">request_control</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">requires_behavior_control</span><span class="p">)</span> <span class="c1"># Will print True</span>
+        <span class="n">await</span> <span class="n">robot</span><span class="o">.</span><span class="n">anim</span><span class="o">.</span><span class="n">play_animation</span><span class="p">(</span><span class="s1">&#39;anim_pounce_success_02&#39;</span><span class="p">)</span>
+        <span class="n">await</span> <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">release_control</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">requires_behavior_control</span><span class="p">)</span> <span class="c1"># Will print False</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">Events</span><span class="o">.</span><span class="n">robot_observed_face</span><span class="p">)</span>
+
+    <span class="c1"># Waits 10 seconds. Show Vector your face.</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.connection.Connection.run_coroutine">
+<code class="descname">run_coroutine</code><span class="sig-paren">(</span><em>coro</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.Connection.run_coroutine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs a given awaitable on the connection thread’s event loop.
+Cannot be called from within the connection thread.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">my_coroutine</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running on the connection thread&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;Finished&quot;</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">run_coroutine</span><span class="p">(</span><span class="n">my_coroutine</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coro</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Awaitable" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Awaitable</span></code></a>[+T_co]) – The coroutine, task or any other awaitable which should be executed.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Any" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The result of the awaitable’s execution.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.connection.Connection.run_soon">
+<code class="descname">run_soon</code><span class="sig-paren">(</span><em>coro</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.Connection.run_soon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedules the given awaitable to run on the event loop for the connection thread.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="n">async</span> <span class="k">def</span> <span class="nf">my_coroutine</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Running on the connection thread&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">run_soon</span><span class="p">(</span><span class="n">my_coroutine</span><span class="p">())</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coro</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Awaitable" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Awaitable</span></code></a>[+T_co]) – The coroutine, task or any awaitable to schedule for execution on the connection thread.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">None</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.connection.Connection.thread">
+<code class="descname">thread</code><a class="headerlink" href="#anki_vector.connection.Connection.thread" title="Permalink to this definition">¶</a></dt>
+<dd><p>A direct reference to the connection thread. Available to callers to determine if the
+current thread is the connection thread.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">threading</span><span class="o">.</span><span class="n">current_thread</span><span class="p">()</span> <span class="ow">is</span> <span class="n">robot</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">thread</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;This code is running on the connection thread&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;This code is not running on the connection thread&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/threading.html#threading.Thread" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The connection thread where all of the grpc messages are being processed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="anki_vector.connection.on_connection_thread">
+<code class="descclassname">anki_vector.connection.</code><code class="descname">on_connection_thread</code><span class="sig-paren">(</span><em>log_messaging=True</em>, <em>requires_control=True</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.connection.on_connection_thread" title="Permalink to this definition">¶</a></dt>
+<dd><p>A decorator generator used internally to denote which functions will run on
+the connection thread. This unblocks the caller of the wrapped function
+and allows them to continue running while the messages are being processed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">class</span> <span class="nc">MyComponent</span><span class="p">(</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">Component</span><span class="p">):</span>
+    <span class="nd">@connection._on_connection_thread</span><span class="p">()</span>
+    <span class="n">async</span> <span class="k">def</span> <span class="nf">on_connection_thread</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">//</span> <span class="n">Do</span> <span class="n">work</span> <span class="n">on</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">thread</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>log_messaging</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – True if the log output should include the entire message or just the size. Recommended for
+large binary return values.</li>
+<li><strong>requires_control</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – True if the function should wait until behavior control is granted before executing.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Callable" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></a>[[<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Coroutine" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coroutine</span></code></a>[<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Component" title="anki_vector.util.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">Component</span></code></a>, <a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Any" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>, <code class="docutils literal notranslate"><span class="pre">None</span></code>]], <a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Any" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A decorator which has 3 possible returns based on context: the result of the decorated function,
+the <a class="reference external" href="https://docs.python.org/3.6/library/concurrent.futures.html#concurrent.futures.Future" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">concurrent.futures.Future</span></code></a> which points to the decorated function, or the
+<a class="reference external" href="https://docs.python.org/3.6/library/asyncio-task.html#asyncio.Future" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">asyncio.Future</span></code></a> which points to the decorated function.
+These contexts are: when the robot is a <a class="reference internal" href="anki_vector.robot.html#anki_vector.robot.Robot" title="anki_vector.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Robot</span></code></a>,
+when the robot is an <a class="reference internal" href="anki_vector.robot.html#anki_vector.robot.AsyncRobot" title="anki_vector.robot.AsyncRobot"><code class="xref py py-class docutils literal notranslate"><span class="pre">AsyncRobot</span></code></a>, and when
+called from the connection thread respectively.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.events.html" class="btn btn-neutral float-right" title="anki_vector.events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.color.html" class="btn btn-neutral" title="anki_vector.color" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

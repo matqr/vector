@@ -1,0 +1,22 @@
+anki\_vector.animation
+======================
+
+.. automodule:: anki_vector.animation
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AnimationComponent
+   
+   
+
+   
+   
+   

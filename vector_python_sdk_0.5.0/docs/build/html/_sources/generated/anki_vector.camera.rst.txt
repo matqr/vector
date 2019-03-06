@@ -1,0 +1,22 @@
+anki\_vector.camera
+===================
+
+.. automodule:: anki_vector.camera
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CameraComponent
+   
+   
+
+   
+   
+   

@@ -1,0 +1,33 @@
+anki\_vector.objects
+====================
+
+.. automodule:: anki_vector.objects
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Charger
+      CustomObject
+      CustomObjectArchetype
+      CustomObjectMarkers
+      CustomObjectTypes
+      EvtObjectAppeared
+      EvtObjectDisappeared
+      EvtObjectFinishedMove
+      EvtObjectObserved
+      FixedCustomObject
+      LightCube
+      ObservableObject
+   
+   
+
+   
+   
+   

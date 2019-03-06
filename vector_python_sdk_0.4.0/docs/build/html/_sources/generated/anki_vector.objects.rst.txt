@@ -1,0 +1,27 @@
+anki\_vector.objects
+====================
+
+.. automodule:: anki_vector.objects
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      EvtObjectAppeared
+      EvtObjectDisappeared
+      EvtObjectFinishedMove
+      EvtObjectObserved
+      LightCube
+      ObservableObject
+   
+   
+
+   
+   
+   

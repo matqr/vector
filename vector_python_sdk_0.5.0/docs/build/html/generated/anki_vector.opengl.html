@@ -1,0 +1,960 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.opengl &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.opengl_vector" href="anki_vector.opengl_vector.html" />
+    <link rel="prev" title="anki_vector.objects" href="anki_vector.objects.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.opengl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_vector.html">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.opengl</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.opengl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.opengl">
+<span id="anki-vector-opengl"></span><h1>anki_vector.opengl<a class="headerlink" href="#module-anki_vector.opengl" title="Permalink to this headline">¶</a></h1>
+<p>This module provides 3D support classes for OpenGL, used by opengl_viewer.py.</p>
+<p>It uses PyOpenGL, a Python OpenGL 3D graphics library which is available on most
+platforms. It also depends on the Pillow library for image processing.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>This package requires Python to have the PyOpenGL package installed, along
+with an implementation of GLUT (OpenGL Utility Toolkit).</p>
+<p>To install the Python packages do <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.[3dviewer]</span></code></p>
+<p>On Windows and Linux you must also install freeglut (macOS / OSX has one
+preinstalled).</p>
+<p>On Linux: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">freeglut3</span></code></p>
+<p class="last">On Windows: Go to <a class="reference external" href="http://freeglut.sourceforge.net/">http://freeglut.sourceforge.net/</a> to get a <code class="docutils literal notranslate"><span class="pre">freeglut.dll</span></code>
+file. It’s included in any of the <cite>Windows binaries</cite> downloads. Place the DLL
+next to your Python script, or install it somewhere in your PATH to allow any
+script to use it.”</p>
+</div>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">raise_opengl_or_pillow_import_error</span></code>(…)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl.Camera" title="anki_vector.opengl.Camera"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Camera</span></code></a>(look_at,&nbsp;up,&nbsp;distance,&nbsp;pitch,&nbsp;yaw)</td>
+<td>Class containing the state of a 3d camera, used to transform all object in a scene with relation to a particular point of view.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.opengl.DynamicTexture" title="anki_vector.opengl.DynamicTexture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DynamicTexture</span></code></a>()</td>
+<td>Wrapper around An OpenGL Texture that can be dynamically updated.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">Light</span></code>(ambient_color,&nbsp;diffuse_color,&nbsp;…[,&nbsp;…])</td>
+<td>Configuration for a light in the OpenGL scene that effects the shading of 3d geometry.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.opengl.MaterialLibrary" title="anki_vector.opengl.MaterialLibrary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaterialLibrary</span></code></a>(resource_context,&nbsp;asset_key)</td>
+<td>Load a .mtl material asset, and return the contents as a dictionary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl.MeshData" title="anki_vector.opengl.MeshData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeshData</span></code></a>(resource_manager,&nbsp;asset_key)</td>
+<td>The loaded / parsed contents of a 3D Wavefront OBJ file.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.opengl.MeshFace" title="anki_vector.opengl.MeshFace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeshFace</span></code></a>(position_ids,&nbsp;normal_ids,&nbsp;tex_ids,&nbsp;…)</td>
+<td>A face polygon in 3d space - the basic building block of 3D models.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl.MeshGroup" title="anki_vector.opengl.MeshGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeshGroup</span></code></a>(name)</td>
+<td>A colletions of face polygons which can be rendered as a group by name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.opengl.OpenGLWindow" title="anki_vector.opengl.OpenGLWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OpenGLWindow</span></code></a>(x,&nbsp;y,&nbsp;width,&nbsp;height,&nbsp;window_name)</td>
+<td>A Window displaying an OpenGL viewport.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl.PrecomputedView" title="anki_vector.opengl.PrecomputedView"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PrecomputedView</span></code></a>()</td>
+<td>A collection of static 3D object which are pre-computed on the graphics card, so they can be quickly drawn when needed.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">Projector</span></code>(fov,&nbsp;near_clip_plane,&nbsp;far_clip_plane)</td>
+<td>Configuration for how 3d objects are projected onto the 2d window.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl.ResourceManager" title="anki_vector.opengl.ResourceManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResourceManager</span></code></a>(context_id)</td>
+<td>Handles returning file resources by keys.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Exceptions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">InvalidOpenGLGlutImplementation</span></code></td>
+<td>Raised by OpenGLViewer if no valid GLUT implementation available.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="anki_vector.opengl.Camera">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">Camera</code><span class="sig-paren">(</span><em>look_at</em>, <em>up</em>, <em>distance</em>, <em>pitch</em>, <em>yaw</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.Camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class containing the state of a 3d camera, used to transform all object in a scene with
+relation to a particular point of view.</p>
+<p>This class is meant to be mutated at run time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>look_at</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Vector3" title="anki_vector.util.Vector3"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector3</span></code></a>) – The initial target of the camera.</li>
+<li><strong>up</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Vector3" title="anki_vector.util.Vector3"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector3</span></code></a>) – The initial up vector of the camera.</li>
+<li><strong>distance</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The initial distance between the camera and it’s target.</li>
+<li><strong>pitch</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The camera’s current rotation about its X axis</li>
+<li><strong>yaw</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The camera’s current rotation about its up axis</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.opengl.Camera.apply">
+<code class="descname">apply</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.Camera.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the transform this camera represents to the active OpenGL context.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.Camera.look_at">
+<code class="descname">look_at</code><a class="headerlink" href="#anki_vector.opengl.Camera.look_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target position of the camera</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.util.html#anki_vector.util.Vector3" title="anki_vector.util.Vector3"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector3</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.Camera.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>forward_amount=0.0</em>, <em>right_amount=0.0</em>, <em>up_amount=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.Camera.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offsets the camera’s position incrementally.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>forward_amount</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – distance to move along the camera’s current forward heading.</li>
+<li><strong>right_amount</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – distance to move along a right angle to the camera’s current forward heading.</li>
+<li><strong>up_amount</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – distance to move along the camera’s up vector.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.Camera.turn">
+<code class="descname">turn</code><span class="sig-paren">(</span><em>yaw_delta</em>, <em>pitch_delta</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.Camera.turn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Incrementally turns the camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>yaw_delta</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Amount to rotate around the camera’s up axis.</li>
+<li><strong>pitch_delta</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Amount to rotate around the camera’s X axis.  This is automatically capped between +/- pi/2</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.Camera.zoom">
+<code class="descname">zoom</code><span class="sig-paren">(</span><em>amount</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.Camera.zoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the camera closer or further from it’s target point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>amount</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – distance to zoom in or out, automatically minimized at 0.1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.DynamicTexture">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">DynamicTexture</code><a class="headerlink" href="#anki_vector.opengl.DynamicTexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper around An OpenGL Texture that can be dynamically updated.</p>
+<dl class="method">
+<dt id="anki_vector.opengl.DynamicTexture.bind">
+<code class="descname">bind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.DynamicTexture.bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bind the texture for rendering.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.DynamicTexture.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>pil_image</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.DynamicTexture.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the texture to contain the provided image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pil_image</strong> (<a class="reference external" href="https://pillow.readthedocs.io/en/latest/reference/Image.html#PIL.Image.Image" title="(in Pillow (PIL Fork) v5.4.0.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a>) – The image to write into the texture.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.MaterialLibrary">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">MaterialLibrary</code><span class="sig-paren">(</span><em>resource_context</em>, <em>asset_key</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.MaterialLibrary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a .mtl material asset, and return the contents as a dictionary.</p>
+<p>Supports the subset of MTL required for the Vector 3D Viewer assets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>resource_manager</strong> – Manager to load resources from.</li>
+<li><strong>asset_key</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The key of the asset to load.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.opengl.MaterialLibrary.get_material_by_name">
+<code class="descname">get_material_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.MaterialLibrary.get_material_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dict of material attributes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#dict" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.MeshData">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">MeshData</code><span class="sig-paren">(</span><em>resource_manager</em>, <em>asset_key</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.MeshData" title="Permalink to this definition">¶</a></dt>
+<dd><p>The loaded / parsed contents of a 3D Wavefront OBJ file.</p>
+<p>This is the intermediary step between the file on the disk, and a renderable
+3D object. It supports the subset of the OBJ file that was used in the
+Vector and Cube assets, and does not attempt to exhaustively support every
+possible setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>resource_manager</strong> (<a class="reference internal" href="#anki_vector.opengl.ResourceManager" title="anki_vector.opengl.ResourceManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceManager</span></code></a>) – The resource manager to load this mesh from.</li>
+<li><strong>asset_key</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The key of the OBJ file to load from the resource manager.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshData.groups">
+<code class="descname">groups</code><a class="headerlink" href="#anki_vector.opengl.MeshData.groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>All supported mesh groups, indexed by group name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Dict" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="#anki_vector.opengl.MeshGroup" title="anki_vector.opengl.MeshGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeshGroup</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.MeshData.load_from_obj_asset">
+<code class="descname">load_from_obj_asset</code><span class="sig-paren">(</span><em>asset_key</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.MeshData.load_from_obj_asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads all mesh data from a specified resource.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>asset_key</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Key for the desired OBJ asset in the resource_manager.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshData.material_library">
+<code class="descname">material_library</code><a class="headerlink" href="#anki_vector.opengl.MeshData.material_library" title="Permalink to this definition">¶</a></dt>
+<dd><p>A container that MTL material attribute dicts can be fetched from by string key.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.opengl.MaterialLibrary" title="anki_vector.opengl.MaterialLibrary"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaterialLibrary</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshData.normals">
+<code class="descname">normals</code><a class="headerlink" href="#anki_vector.opengl.MeshData.normals" title="Permalink to this definition">¶</a></dt>
+<dd><p>All directional vertex normals in this mesh.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshData.tex_coords">
+<code class="descname">tex_coords</code><a class="headerlink" href="#anki_vector.opengl.MeshData.tex_coords" title="Permalink to this definition">¶</a></dt>
+<dd><p>All texture coordinates in this mesh.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshData.vertices">
+<code class="descname">vertices</code><a class="headerlink" href="#anki_vector.opengl.MeshData.vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>All worldspace vertex positions in this mesh.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.MeshFace">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">MeshFace</code><span class="sig-paren">(</span><em>position_ids</em>, <em>normal_ids</em>, <em>tex_ids</em>, <em>active_material</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.MeshFace" title="Permalink to this definition">¶</a></dt>
+<dd><p>A face polygon in 3d space - the basic building block of 3D models.</p>
+<p>The actual coordinate data is stored in tables on the host mesh, the face contains
+indexes to those table denoting which values should be used in rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>position_ids</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – Worldspace position ids on the host mesh for this face’s vertices.</li>
+<li><strong>normal_ids</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – Normal direction ids on the host mesh for this face’s vertices.</li>
+<li><strong>tex_ids</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – Texture coordinate ids on the host mesh for this face’s vertices.</li>
+<li><strong>active_material</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Material name used to render this face.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshFace.material">
+<code class="descname">material</code><a class="headerlink" href="#anki_vector.opengl.MeshFace.material" title="Permalink to this definition">¶</a></dt>
+<dd><p>Material name used to render this face.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshFace.normal_ids">
+<code class="descname">normal_ids</code><a class="headerlink" href="#anki_vector.opengl.MeshFace.normal_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normal direction ids on the host mesh for this face’s vertices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshFace.position_ids">
+<code class="descname">position_ids</code><a class="headerlink" href="#anki_vector.opengl.MeshFace.position_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Worldspace position ids on the host mesh for this face’s vertices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshFace.tex_ids">
+<code class="descname">tex_ids</code><a class="headerlink" href="#anki_vector.opengl.MeshFace.tex_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Texture coordinate ids on the host mesh for this face’s vertices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshFace.vertex_count">
+<code class="descname">vertex_count</code><a class="headerlink" href="#anki_vector.opengl.MeshFace.vertex_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of vertices on this face - will be either 3 for a triangle, or 4 for a quad</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.MeshGroup">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">MeshGroup</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.MeshGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>A colletions of face polygons which can be rendered as a group by name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The name associated with this part of the 3d mesh collection.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.opengl.MeshGroup.add_face_by_obj_data">
+<code class="descname">add_face_by_obj_data</code><span class="sig-paren">(</span><em>source_values</em>, <em>active_material</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.MeshGroup.add_face_by_obj_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new face to the mesh group.</p>
+<dl class="docutils">
+<dt>Face source data is made up of 3 or 4 vertices</dt>
+<dd><ul class="first last simple">
+<li>e.g. <cite>f v1 v2 v3</cite> or <cite>f v1 v2 v3 v4</cite></li>
+</ul>
+</dd>
+</dl>
+<p>where each vertex definition is multiple indexes seperated by
+slashes and can follow the following formats:</p>
+<p>position_index
+position_index/tex_coord_index
+position_index/tex_coord_index/normal_index
+position_index//normal_index</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source_values</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#list" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) – obj data to parse for this face</li>
+<li><strong>active_material</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the material used to render this face</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshGroup.faces">
+<code class="descname">faces</code><a class="headerlink" href="#anki_vector.opengl.MeshGroup.faces" title="Permalink to this definition">¶</a></dt>
+<dd><p>All faces associated with the mesh group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#anki_vector.opengl.MeshFace" title="anki_vector.opengl.MeshFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeshFace</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.MeshGroup.name">
+<code class="descname">name</code><a class="headerlink" href="#anki_vector.opengl.MeshGroup.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name associated with the mesh group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.OpenGLWindow">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">OpenGLWindow</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>width</em>, <em>height</em>, <em>window_name</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.OpenGLWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Window displaying an OpenGL viewport.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The initial x coordinate of the window in pixels.</li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The initial y coordinate of the window in pixels.</li>
+<li><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The initial height of the window in pixels.</li>
+<li><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – The initial height of the window in pixels.</li>
+<li><strong>window_name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The name / title for the window.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="anki_vector.opengl.OpenGLWindow.display_rendered_content">
+<em class="property">static </em><code class="descname">display_rendered_content</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.OpenGLWindow.display_rendered_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Swaps buffers once rendering is finished.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.OpenGLWindow.height">
+<code class="descname">height</code><a class="headerlink" href="#anki_vector.opengl.OpenGLWindow.height" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>The vertical height of the window</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.OpenGLWindow.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><em>display_function</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.OpenGLWindow.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialze the OpenGL display parts of the Window.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Must be called on the same thread as OpenGL (usually the main thread),</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.OpenGLWindow.prepare_for_rendering">
+<code class="descname">prepare_for_rendering</code><span class="sig-paren">(</span><em>projector</em>, <em>camera</em>, <em>lights</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.OpenGLWindow.prepare_for_rendering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the window, clears buffers, and sets up the scene transform and lighting state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>projector</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Projector</span></code>) – The projector configuration to use for this rendering pass.</li>
+<li><strong>camera</strong> (<a class="reference internal" href="#anki_vector.opengl.Camera" title="anki_vector.opengl.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a>) – The camera object to use for this rendering pass.</li>
+<li><strong>lights</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code>]) – The light list to use for this rendering pass.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl.OpenGLWindow.width">
+<code class="descname">width</code><a class="headerlink" href="#anki_vector.opengl.OpenGLWindow.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>The horizontal width of the window</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.PrecomputedView">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">PrecomputedView</code><a class="headerlink" href="#anki_vector.opengl.PrecomputedView" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collection of static 3D object which are pre-computed on the graphics card, so they can
+be quickly drawn when needed.</p>
+<dl class="method">
+<dt id="anki_vector.opengl.PrecomputedView.build_from_mesh_data">
+<code class="descname">build_from_mesh_data</code><span class="sig-paren">(</span><em>mesh_data</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.PrecomputedView.build_from_mesh_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses a loaded mesh to create 3d geometry to store in the view.</p>
+<p>All groups in the mesh will pre-computed and stored by name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mesh_data</strong> (<a class="reference internal" href="#anki_vector.opengl.MeshData" title="anki_vector.opengl.MeshData"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeshData</span></code></a>) – the source data that 3d geometry will be pre-computed from.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.PrecomputedView.build_from_render_function">
+<code class="descname">build_from_render_function</code><span class="sig-paren">(</span><em>name</em>, <em>f</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.PrecomputedView.build_from_render_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses an externally provided function to create 3d geometry to store in the view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the key this pre-computed geometry can be draw from.</li>
+<li><strong>f</strong> (<em>&lt;built-in function callable&gt;</em>) – the function used to create the 3d geometry.</li>
+<li><strong>args</strong> – any parameters the supplied function is expecting.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.PrecomputedView.display_all">
+<code class="descname">display_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.PrecomputedView.display_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders all pre-computed geometry in the view collection.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.PrecomputedView.display_by_key">
+<code class="descname">display_by_key</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.PrecomputedView.display_by_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders a specific piece of geometry from the view collection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The pre-computed object to render.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl.ResourceManager">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl.</code><code class="descname">ResourceManager</code><span class="sig-paren">(</span><em>context_id</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.ResourceManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles returning file resources by keys. The current implementation delegates to resource_stream
+directly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context_id</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – Key used for identifying this context</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.opengl.ResourceManager.context_id">
+<code class="descname">context_id</code><a class="headerlink" href="#anki_vector.opengl.ResourceManager.context_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Key used for identifying this context.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl.ResourceManager.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl.ResourceManager.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a resource given a groups of key arguments.</p>
+<p>Since the resource_stream path is non_stantard with os.path.join, this resolve is encapsulated inside
+the resource manager. The context that these resources are files on disk is similarly encapsulated.
+All client classes only need match keys with returned data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>args</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – string keys for identifying the asset.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.opengl_vector.html" class="btn btn-neutral float-right" title="anki_vector.opengl_vector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.objects.html" class="btn btn-neutral" title="anki_vector.objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

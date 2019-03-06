@@ -1,0 +1,48 @@
+anki\_vector.util
+=================
+
+.. automodule:: anki_vector.util
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      angle_z_to_quaternion
+      degrees
+      distance_inches
+      distance_mm
+      get_class_logger
+      parse_command_args
+      radians
+      setup_basic_logging
+      speed_mmps
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Angle
+      BaseOverlay
+      Component
+      Distance
+      ImageRect
+      Matrix44
+      Pose
+      Position
+      Quaternion
+      RectangleOverlay
+      Speed
+      Vector2
+      Vector3
+   
+   
+
+   
+   
+   

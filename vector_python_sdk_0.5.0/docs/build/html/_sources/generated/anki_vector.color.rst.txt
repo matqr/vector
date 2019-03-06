@@ -1,0 +1,22 @@
+anki\_vector.color
+==================
+
+.. automodule:: anki_vector.color
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Color
+   
+   
+
+   
+   
+   

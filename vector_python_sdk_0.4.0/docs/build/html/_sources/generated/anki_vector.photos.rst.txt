@@ -1,0 +1,22 @@
+anki\_vector.photos
+===================
+
+.. automodule:: anki_vector.photos
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      PhotographComponent
+   
+   
+
+   
+   
+   

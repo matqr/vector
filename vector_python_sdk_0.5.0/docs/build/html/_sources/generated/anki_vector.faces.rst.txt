@@ -1,0 +1,24 @@
+anki\_vector.faces
+==================
+
+.. automodule:: anki_vector.faces
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Expression
+      Face
+      FaceComponent
+   
+   
+
+   
+   
+   

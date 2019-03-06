@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.lights &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.motors" href="anki_vector.motors.html" />
+    <link rel="prev" title="anki_vector.faces" href="anki_vector.faces.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl.html">anki_vector.opengl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_vector.html">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.lights</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.lights.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.lights">
+<span id="anki-vector-lights"></span><h1>anki_vector.lights<a class="headerlink" href="#module-anki_vector.lights" title="Permalink to this headline">¶</a></h1>
+<p>Helper routines for dealing with Vector’s lights and colors.</p>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">package_request_params</span></code>(lights,&nbsp;color_profile)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.lights.ColorProfile" title="anki_vector.lights.ColorProfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColorProfile</span></code></a>(red_multiplier,&nbsp;…)</td>
+<td>Applies transforms to make Vector’s lights and colors appear as intended, by limiting maximum channel intensity.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Light</span></code></a>([on_color,&nbsp;off_color,&nbsp;on_period_ms,&nbsp;…])</td>
+<td>Lights are used with Vector’s Cube.</td>
+</tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="anki_vector.lights.MAX_COLOR_PROFILE">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">MAX_COLOR_PROFILE</code><em class="property"> = &lt;anki_vector.lights.ColorProfile object&gt;</em><a class="headerlink" href="#anki_vector.lights.MAX_COLOR_PROFILE" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.ColorProfile" title="anki_vector.lights.ColorProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorProfile</span></code></a> – Color profile to get the maximum possible brightness out of each LED.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.blue_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">blue_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.blue_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady blue colored LED light.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.cyan_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">cyan_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.cyan_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady cyan colored LED light.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.green_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">green_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.green_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady green colored LED light.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.magenta_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">magenta_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.magenta_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady magenta colored LED light.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.off_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">off_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.off_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady off (non-illuminated LED light).</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.red_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">red_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.red_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady red colored LED light.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.white_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">white_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.white_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady white colored LED light.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.lights.yellow_light">
+<code class="descclassname">anki_vector.lights.</code><code class="descname">yellow_light</code><em class="property"> = &lt;anki_vector.lights.Light object&gt;</em><a class="headerlink" href="#anki_vector.lights.yellow_light" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a> – A steady yellow colored LED light.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.lights.Color">
+<em class="property">class </em><code class="descclassname">anki_vector.lights.</code><code class="descname">Color</code><span class="sig-paren">(</span><em>int_color=None</em>, <em>rgb=None</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.lights.Color" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Color to be used with a Light or Vector’s screen.</p>
+<p>Either int_color or rgb may be used to specify the actual color.
+Any alpha components (from int_color) are ignored - all colors are fully opaque.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>int_color</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]) – A 32 bit value holding the binary RGBA value (where A
+is ignored and forced to be fully opaque).</li>
+<li><strong>rgb</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#tuple" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>]) – A tuple holding the integer values from 0-255 for (reg, green, blue)</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Optional" title="(in Python v3.6)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – A name to assign to this color.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.lights.Color.int_color">
+<code class="descname">int_color</code><a class="headerlink" href="#anki_vector.lights.Color.int_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The encoded integer value of the color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.Color.rgb565_bytepair">
+<code class="descname">rgb565_bytepair</code><a class="headerlink" href="#anki_vector.lights.Color.rgb565_bytepair" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bytes[]</em> – Two bytes representing an int16 color with rgb565 encoding.</p>
+<p>This format reflects the robot’s Screen color range, and performing this
+conversion will reduce network traffic when sending Screen data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.lights.ColorProfile">
+<em class="property">class </em><code class="descclassname">anki_vector.lights.</code><code class="descname">ColorProfile</code><span class="sig-paren">(</span><em>red_multiplier</em>, <em>green_multiplier</em>, <em>blue_multiplier</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.lights.ColorProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies transforms to make Vector’s lights and colors appear as
+intended, by limiting maximum channel intensity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>red_multiplier</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Scaling value for the brightness of red Lights</li>
+<li><strong>green_multiplier</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Scaling value for the brightness of green Lights</li>
+<li><strong>blue_multiplier</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – Scaling value for the brightness of blue Lights</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="anki_vector.lights.ColorProfile.blue_multiplier">
+<code class="descname">blue_multiplier</code><a class="headerlink" href="#anki_vector.lights.ColorProfile.blue_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float</em> – The multiplier used on the red channel.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.ColorProfile.green_multiplier">
+<code class="descname">green_multiplier</code><a class="headerlink" href="#anki_vector.lights.ColorProfile.green_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float</em> – The multiplier used on the red channel.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.ColorProfile.red_multiplier">
+<code class="descname">red_multiplier</code><a class="headerlink" href="#anki_vector.lights.ColorProfile.red_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float</em> – The multiplier used on the red channel.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.lights.Light">
+<em class="property">class </em><code class="descclassname">anki_vector.lights.</code><code class="descname">Light</code><span class="sig-paren">(</span><em>on_color=&lt;anki_vector.color.Color object&gt;</em>, <em>off_color=&lt;anki_vector.color.Color object&gt;</em>, <em>on_period_ms=250</em>, <em>off_period_ms=0</em>, <em>transition_on_period_ms=0</em>, <em>transition_off_period_ms=0</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.lights.Light" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lights are used with Vector’s Cube.</p>
+<p>Lights may either be “on” or “off”, though in practice any colors may be
+assigned to either state (including no color/light).</p>
+<dl class="attribute">
+<dt id="anki_vector.lights.Light.off_color">
+<code class="descname">off_color</code><a class="headerlink" href="#anki_vector.lights.Light.off_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color shown when the light is off.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.color.html#anki_vector.color.Color" title="anki_vector.color.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.Light.off_period_ms">
+<code class="descname">off_period_ms</code><a class="headerlink" href="#anki_vector.lights.Light.off_period_ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of milliseconds the light should be “off” for for each cycle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.Light.on_color">
+<code class="descname">on_color</code><a class="headerlink" href="#anki_vector.lights.Light.on_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color shown when the light is on.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.color.html#anki_vector.color.Color" title="anki_vector.color.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.Light.on_period_ms">
+<code class="descname">on_period_ms</code><a class="headerlink" href="#anki_vector.lights.Light.on_period_ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of milliseconds the light should be “on” for for each cycle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.Light.transition_off_period_ms">
+<code class="descname">transition_off_period_ms</code><a class="headerlink" href="#anki_vector.lights.Light.transition_off_period_ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of milliseconds to take to transition the light to the off color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.lights.Light.transition_on_period_ms">
+<code class="descname">transition_on_period_ms</code><a class="headerlink" href="#anki_vector.lights.Light.transition_on_period_ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of milliseconds to take to transition the light to the on color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.motors.html" class="btn btn-neutral float-right" title="anki_vector.motors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.faces.html" class="btn btn-neutral" title="anki_vector.faces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

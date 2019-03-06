@@ -1,0 +1,29 @@
+anki\_vector.lights
+===================
+
+.. automodule:: anki_vector.lights
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      package_request_params
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ColorProfile
+      Light
+   
+   
+
+   
+   
+   

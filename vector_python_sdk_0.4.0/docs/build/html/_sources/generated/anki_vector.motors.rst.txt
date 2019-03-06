@@ -1,0 +1,22 @@
+anki\_vector.motors
+===================
+
+.. automodule:: anki_vector.motors
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      MotorComponent
+   
+   
+
+   
+   
+   

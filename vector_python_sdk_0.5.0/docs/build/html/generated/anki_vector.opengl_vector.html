@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.opengl_vector &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.opengl_viewer" href="anki_vector.opengl_viewer.html" />
+    <link rel="prev" title="anki_vector.opengl" href="anki_vector.opengl.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl.html">anki_vector.opengl</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.opengl_vector</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.opengl_vector.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.opengl_vector">
+<span id="anki-vector-opengl-vector"></span><h1>anki_vector.opengl_vector<a class="headerlink" href="#module-anki_vector.opengl_vector" title="Permalink to this headline">¶</a></h1>
+<p>This module provides Vector-specific 3D support classes for OpenGL, used by opengl_viewer.py.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl_vector.CubeRenderFrame" title="anki_vector.opengl_vector.CubeRenderFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CubeRenderFrame</span></code></a>(cube)</td>
+<td>Minimal copy of a Cube’s state for 1 frame of rendering.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomObjectRenderFrame</span></code>(custom_object,&nbsp;is_fixed)</td>
+<td>Minimal copy of a CustomObject’s state for 1 frame of rendering.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl_vector.FaceRenderFrame" title="anki_vector.opengl_vector.FaceRenderFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FaceRenderFrame</span></code></a>(face)</td>
+<td>Minimal copy of a Face’s state for 1 frame of rendering.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.opengl_vector.LightCubeView" title="anki_vector.opengl_vector.LightCubeView"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LightCubeView</span></code></a>(mesh_data)</td>
+<td>A view containing the Vector Light Cube 3D Model.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">NavMapView</span></code>()</td>
+<td>A view containing a cube of unit size at the origin.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">ObservableObjectRenderFrame</span></code>(obj)</td>
+<td>Minimal copy of an object’s state for 1 frame of rendering.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl_vector.RobotRenderFrame" title="anki_vector.opengl_vector.RobotRenderFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RobotRenderFrame</span></code></a>(robot)</td>
+<td>Minimal copy of a Robot’s state for 1 frame of rendering.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.opengl_vector.RobotView" title="anki_vector.opengl_vector.RobotView"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RobotView</span></code></a>(mesh_data)</td>
+<td>A view containing the Vector robot 3D Model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl_vector.UnitCubeView" title="anki_vector.opengl_vector.UnitCubeView"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitCubeView</span></code></a>()</td>
+<td>A view containing a cube of unit size at the origin.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.opengl_vector.VectorViewManifest" title="anki_vector.opengl_vector.VectorViewManifest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VectorViewManifest</span></code></a>()</td>
+<td>A collection of Vector-specific source data containing views to display.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.opengl_vector.WorldRenderFrame" title="anki_vector.opengl_vector.WorldRenderFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WorldRenderFrame</span></code></a>(robot)</td>
+<td>Minimal copy of the World’s state for 1 frame of rendering.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="anki_vector.opengl_vector.CubeRenderFrame">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">CubeRenderFrame</code><span class="sig-paren">(</span><em>cube</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.CubeRenderFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimal copy of a Cube’s state for 1 frame of rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cube</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.LightCube" title="anki_vector.objects.LightCube"><code class="xref py py-class docutils literal notranslate"><span class="pre">LightCube</span></code></a>) – the cube object to be rendered.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl_vector.FaceRenderFrame">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">FaceRenderFrame</code><span class="sig-paren">(</span><em>face</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.FaceRenderFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimal copy of a Face’s state for 1 frame of rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>face</strong> (<a class="reference internal" href="anki_vector.faces.html#anki_vector.faces.Face" title="anki_vector.faces.Face"><code class="xref py py-class docutils literal notranslate"><span class="pre">Face</span></code></a>) – The face object to be rendered.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl_vector.LightCubeView">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">LightCubeView</code><span class="sig-paren">(</span><em>mesh_data</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.LightCubeView" title="Permalink to this definition">¶</a></dt>
+<dd><p>A view containing the Vector Light Cube 3D Model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mesh_data</strong> (<a class="reference internal" href="anki_vector.opengl.html#anki_vector.opengl.MeshData" title="anki_vector.opengl.MeshData"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeshData</span></code></a>) – Source Mesh Data for the light cube.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.opengl_vector.LightCubeView.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>pose</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.LightCubeView.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the precomputed view at a specific pose in 3d space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pose</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a>) – Where to display the cube.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl_vector.RobotRenderFrame">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">RobotRenderFrame</code><span class="sig-paren">(</span><em>robot</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.RobotRenderFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimal copy of a Robot’s state for 1 frame of rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>robot</strong> (<a class="reference internal" href="anki_vector.robot.html#anki_vector.robot.Robot" title="anki_vector.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Robot</span></code></a>) – the robot object to be rendered.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl_vector.RobotView">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">RobotView</code><span class="sig-paren">(</span><em>mesh_data</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.RobotView" title="Permalink to this definition">¶</a></dt>
+<dd><p>A view containing the Vector robot 3D Model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mesh_data</strong> (<a class="reference internal" href="anki_vector.opengl.html#anki_vector.opengl.MeshData" title="anki_vector.opengl.MeshData"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeshData</span></code></a>) – Source Mesh Data for the robot.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="anki_vector.opengl_vector.RobotView.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>pose</em>, <em>head_angle</em>, <em>lift_position</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.RobotView.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the precomputed view at a specific pose in 3d space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pose</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a>) – Where to display the robot.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl_vector.UnitCubeView">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">UnitCubeView</code><a class="headerlink" href="#anki_vector.opengl_vector.UnitCubeView" title="Permalink to this definition">¶</a></dt>
+<dd><p>A view containing a cube of unit size at the origin.</p>
+<dl class="method">
+<dt id="anki_vector.opengl_vector.UnitCubeView.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>color</em>, <em>draw_solid</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.UnitCubeView.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the cube with a specific color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>color</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.List" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]) – Color to display the cube.</li>
+<li><strong>draw_solid</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – Whether to draw solid polygons (False to draw wireframe).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl_vector.VectorViewManifest">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">VectorViewManifest</code><a class="headerlink" href="#anki_vector.opengl_vector.VectorViewManifest" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collection of Vector-specific source data containing views to display.</p>
+<dl class="attribute">
+<dt id="anki_vector.opengl_vector.VectorViewManifest.light_cube_view">
+<code class="descname">light_cube_view</code><a class="headerlink" href="#anki_vector.opengl_vector.VectorViewManifest.light_cube_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>A precomputed view of Vector’s light cube.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.opengl_vector.LightCubeView" title="anki_vector.opengl_vector.LightCubeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">LightCubeView</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.opengl_vector.VectorViewManifest.load_assets">
+<code class="descname">load_assets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.VectorViewManifest.load_assets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads all assets needed for the view manifest, and precomputes them
+into cached views.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl_vector.VectorViewManifest.nav_map_view">
+<code class="descname">nav_map_view</code><a class="headerlink" href="#anki_vector.opengl_vector.VectorViewManifest.nav_map_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>A precomputable view of the navigation map.  This will be updated
+as new content comes in.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">NavMapView</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl_vector.VectorViewManifest.robot_view">
+<code class="descname">robot_view</code><a class="headerlink" href="#anki_vector.opengl_vector.VectorViewManifest.robot_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>A precomputed view of the robot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.opengl_vector.RobotView" title="anki_vector.opengl_vector.RobotView"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobotView</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.opengl_vector.VectorViewManifest.unit_cube_view">
+<code class="descname">unit_cube_view</code><a class="headerlink" href="#anki_vector.opengl_vector.VectorViewManifest.unit_cube_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>A precomputed view of a unit cube.</p>
+<p>This is used for representing detected faces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#anki_vector.opengl_vector.UnitCubeView" title="anki_vector.opengl_vector.UnitCubeView"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitCubeView</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.opengl_vector.WorldRenderFrame">
+<em class="property">class </em><code class="descclassname">anki_vector.opengl_vector.</code><code class="descname">WorldRenderFrame</code><span class="sig-paren">(</span><em>robot</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.opengl_vector.WorldRenderFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimal copy of the World’s state for 1 frame of rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>robot</strong> (<a class="reference internal" href="anki_vector.robot.html#anki_vector.robot.Robot" title="anki_vector.robot.Robot"><code class="xref py py-class docutils literal notranslate"><span class="pre">Robot</span></code></a>) – the robot object to be rendered, which also has handles to the other objects
+defined in it’s world class.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.opengl_viewer.html" class="btn btn-neutral float-right" title="anki_vector.opengl_viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.opengl.html" class="btn btn-neutral" title="anki_vector.opengl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

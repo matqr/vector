@@ -1,0 +1,38 @@
+anki\_vector.exceptions
+=======================
+
+.. automodule:: anki_vector.exceptions
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      connection_error
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      VectorCameraFeedDisabledException
+      VectorConnectionException
+      VectorControlException
+      VectorException
+      VectorInvalidVersionException
+      VectorNotFoundException
+      VectorNotReadyException
+      VectorTimeoutException
+      VectorUnauthenticatedException
+      VectorUnavailableException
+      VectorUnimplementedException
+   
+   

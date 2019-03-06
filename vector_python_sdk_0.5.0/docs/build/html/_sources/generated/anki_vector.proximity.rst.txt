@@ -1,0 +1,23 @@
+anki\_vector.proximity
+======================
+
+.. automodule:: anki_vector.proximity
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ProximityComponent
+      ProximitySensorData
+   
+   
+
+   
+   
+   

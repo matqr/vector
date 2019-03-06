@@ -1,0 +1,836 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.objects &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.photos" href="anki_vector.photos.html" />
+    <link rel="prev" title="anki_vector.motors" href="anki_vector.motors.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.objects.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.objects">
+<span id="anki-vector-objects"></span><h1>anki_vector.objects<a class="headerlink" href="#module-anki_vector.objects" title="Permalink to this headline">¶</a></h1>
+<p>Object and Light Cube recognition.</p>
+<p>Vector can recognize and track a number of different types of objects.</p>
+<p>These objects may be visible (currently observed by the robot’s camera)
+and tappable (in the case of the Light Cube that ships with the robot).</p>
+<p>The Light Cube is known as a <a class="reference internal" href="#anki_vector.objects.LightCube" title="anki_vector.objects.LightCube"><code class="xref py py-class docutils literal notranslate"><span class="pre">LightCube</span></code></a> by the SDK. The cube
+has controllable lights, and sensors that can determine when it’s being
+moved or tapped.</p>
+<p>Objects can generate events which can be subscribed to from the anki_vector.events
+class, such as object_appeared (of type EvtObjectAppeared), and
+object_disappeared (of type EvtObjectDisappeared), which are broadcast
+based on both robot originating events and local state.</p>
+<p>All observable objects have a marker of a known size attached to them,
+which allows Vector to recognize the object and its position and rotation(“pose”).</p>
+<p>Vector connects to his Light Cubes with BLE.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.objects.EvtObjectAppeared" title="anki_vector.objects.EvtObjectAppeared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvtObjectAppeared</span></code></a>(obj,&nbsp;image_rect,&nbsp;pose)</td>
+<td>Triggered whenever an object is first visually identified by a robot.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.objects.EvtObjectDisappeared" title="anki_vector.objects.EvtObjectDisappeared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvtObjectDisappeared</span></code></a>(obj)</td>
+<td>Triggered whenever an object that was previously being observed is no longer visible.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.objects.EvtObjectFinishedMove" title="anki_vector.objects.EvtObjectFinishedMove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvtObjectFinishedMove</span></code></a>(obj,&nbsp;move_duration)</td>
+<td>Triggered when an active object stops moving.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#anki_vector.objects.EvtObjectObserved" title="anki_vector.objects.EvtObjectObserved"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvtObjectObserved</span></code></a>(obj,&nbsp;image_rect,&nbsp;pose)</td>
+<td>Triggered whenever an object is visually identified by the robot.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.objects.LightCube" title="anki_vector.objects.LightCube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LightCube</span></code></a>(robot,&nbsp;**kw)</td>
+<td>Represents Vector’s Cube.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">ObservableObject</span></code>(robot,&nbsp;**kw)</td>
+<td>Represents any object Vector can see in the world.</td>
+</tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="anki_vector.objects.LIGHT_CUBE_1_TYPE">
+<code class="descclassname">anki_vector.objects.</code><code class="descname">LIGHT_CUBE_1_TYPE</code><em class="property"> = 2</em><a class="headerlink" href="#anki_vector.objects.LIGHT_CUBE_1_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>LIGHT_CUBE_1_TYPE’s markers look like 2 concentric circles with lines and gaps.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="anki_vector.objects.OBJECT_VISIBILITY_TIMEOUT">
+<code class="descclassname">anki_vector.objects.</code><code class="descname">OBJECT_VISIBILITY_TIMEOUT</code><em class="property"> = 0.4</em><a class="headerlink" href="#anki_vector.objects.OBJECT_VISIBILITY_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Length of time in seconds to go without receiving an observed event before
+assuming that Vector can no longer see an object.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.objects.EvtObjectObserved">
+<em class="property">class </em><code class="descclassname">anki_vector.objects.</code><code class="descname">EvtObjectObserved</code><span class="sig-paren">(</span><em>obj</em>, <em>image_rect</em>, <em>pose</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.EvtObjectObserved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggered whenever an object is visually identified by the robot.</p>
+<p>A stream of these events are produced while an object is visible to the robot.
+Each event has an updated image_box field.</p>
+<p>See EvtObjectAppeared if you only want to know when an object first
+becomes visible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> – The object that was observed</li>
+<li><strong>image_rect</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.ImageRect" title="anki_vector.util.ImageRect"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageRect</span></code></a>) – An <a class="reference internal" href="anki_vector.util.html#anki_vector.util.ImageRect" title="anki_vector.util.ImageRect"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.ImageRect</span></code></a>: defining where the object is within Vector’s camera view</li>
+<li><strong>pose</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a>) – The <a class="reference internal" href="anki_vector.util.html#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Pose</span></code></a>: defining the position and rotation of the object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.objects.EvtObjectAppeared">
+<em class="property">class </em><code class="descclassname">anki_vector.objects.</code><code class="descname">EvtObjectAppeared</code><span class="sig-paren">(</span><em>obj</em>, <em>image_rect</em>, <em>pose</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.EvtObjectAppeared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggered whenever an object is first visually identified by a robot.</p>
+<p>This differs from EvtObjectObserved in that it’s only triggered when
+an object initially becomes visible.  If it disappears for more than
+OBJECT_VISIBILITY_TIMEOUT seconds and then is seen again, a
+EvtObjectDisappeared will be dispatched, followed by another
+EvtObjectAppeared event.</p>
+<p>For continuous tracking information about a visible object, see
+EvtObjectObserved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> – The object that is starting to be observed</li>
+<li><strong>image_rect</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.ImageRect" title="anki_vector.util.ImageRect"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageRect</span></code></a>) – An <a class="reference internal" href="anki_vector.util.html#anki_vector.util.ImageRect" title="anki_vector.util.ImageRect"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.ImageRect</span></code></a>: defining where the object is within Vector’s camera view</li>
+<li><strong>pose</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a>) – The <a class="reference internal" href="anki_vector.util.html#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.util.Pose</span></code></a>: defining the position and rotation of the object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.objects.EvtObjectDisappeared">
+<em class="property">class </em><code class="descclassname">anki_vector.objects.</code><code class="descname">EvtObjectDisappeared</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.EvtObjectDisappeared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggered whenever an object that was previously being observed is no longer visible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> – The object that is no longer being observed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.objects.EvtObjectFinishedMove">
+<em class="property">class </em><code class="descclassname">anki_vector.objects.</code><code class="descname">EvtObjectFinishedMove</code><span class="sig-paren">(</span><em>obj</em>, <em>move_duration</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.EvtObjectFinishedMove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggered when an active object stops moving.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> – The object that moved</li>
+<li><strong>move_duration</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – The duration of the move</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.objects.LightCube">
+<em class="property">class </em><code class="descclassname">anki_vector.objects.</code><code class="descname">LightCube</code><span class="sig-paren">(</span><em>robot</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.LightCube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents Vector’s Cube.</p>
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.descriptive_name">
+<code class="descname">descriptive_name</code><a class="headerlink" href="#anki_vector.objects.LightCube.descriptive_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A descriptive name for this ObservableObject instance.</p>
+<p>Note: Sub-classes should override this to add any other relevant info
+for that object type.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">descriptive_name</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">descriptive_name</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.factory_id">
+<code class="descname">factory_id</code><a class="headerlink" href="#anki_vector.objects.LightCube.factory_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The unique hardware id of the physical cube.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">factory_id</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">factory_id</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.is_connected">
+<code class="descname">is_connected</code><a class="headerlink" href="#anki_vector.objects.LightCube.is_connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the cube is currently connected to the robot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">is_connected</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">is_connected</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.is_moving">
+<code class="descname">is_moving</code><a class="headerlink" href="#anki_vector.objects.LightCube.is_moving" title="Permalink to this definition">¶</a></dt>
+<dd><p>True if the cube’s accelerometer indicates that the cube is moving.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">is_moving</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">is_moving</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_moved_robot_timestamp">
+<code class="descname">last_moved_robot_timestamp</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_moved_robot_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the object was last moved in robot time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_moved_robot_timestamp</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_moved_robot_timestamp</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_moved_start_robot_timestamp">
+<code class="descname">last_moved_start_robot_timestamp</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_moved_start_robot_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the object more recently started moving in robot time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_moved_start_robot_timestamp</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_moved_start_robot_timestamp</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_moved_start_time">
+<code class="descname">last_moved_start_time</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_moved_start_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the object most recently started moving in SDK time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_moved_start_time</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_moved_start_time</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_moved_time">
+<code class="descname">last_moved_time</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_moved_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the object was last moved in SDK time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_moved_time</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_moved_time</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_tapped_robot_timestamp">
+<code class="descname">last_tapped_robot_timestamp</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_tapped_robot_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the object was last tapped in robot time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_tapped_robot_timestamp</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_tapped_robot_timestamp</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_tapped_time">
+<code class="descname">last_tapped_time</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_tapped_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the object was last tapped in SDK time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_tapped_time</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_tapped_time</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_up_axis_changed_robot_timestamp">
+<code class="descname">last_up_axis_changed_robot_timestamp</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_up_axis_changed_robot_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time the object’s orientation last changed in robot time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_up_axis_changed_robot_timestamp</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_up_axis_changed_robot_timestamp</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.last_up_axis_changed_time">
+<code class="descname">last_up_axis_changed_time</code><a class="headerlink" href="#anki_vector.objects.LightCube.last_up_axis_changed_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time the object’s orientation last changed in SDK time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">last_up_axis_changed_time</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">last_up_axis_changed_time</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.object_id">
+<code class="descname">object_id</code><a class="headerlink" href="#anki_vector.objects.LightCube.object_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The internal ID assigned to the object.</p>
+<p>This value can only be assigned once as it is static on the robot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">object_id</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">object_id</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.objects.LightCube.set_light_corners">
+<code class="descname">set_light_corners</code><span class="sig-paren">(</span><em>light1</em>, <em>light2</em>, <em>light3</em>, <em>light4</em>, <em>color_profile=&lt;anki_vector.lights.ColorProfile object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.LightCube.set_light_corners" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the light for each corner.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="c1"># ensure we are connected to a cube</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connect_cube</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="p">:</span>
+        <span class="n">cube</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span>
+
+        <span class="n">cube</span><span class="o">.</span><span class="n">set_light_corners</span><span class="p">(</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">blue_light</span><span class="p">,</span>
+                               <span class="n">anki_vector</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">green_light</span><span class="p">,</span>
+                               <span class="n">anki_vector</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">red_light</span><span class="p">,</span>
+                               <span class="n">anki_vector</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">white_light</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>light1</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a>) – The settings for the first light.</li>
+<li><strong>light2</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a>) – The settings for the second light.</li>
+<li><strong>light3</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a>) – The settings for the third light.</li>
+<li><strong>light4</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a>) – The settings for the fourth light.</li>
+<li><strong>color_profile</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.ColorProfile" title="anki_vector.lights.ColorProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorProfile</span></code></a>) – The profile to be used for the cube lights</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.objects.LightCube.set_lights">
+<code class="descname">set_lights</code><span class="sig-paren">(</span><em>light</em>, <em>color_profile=&lt;anki_vector.lights.ColorProfile object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.LightCube.set_lights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all lights on the cube</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="c1"># ensure we are connected to a cube</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connect_cube</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="p">:</span>
+        <span class="n">cube</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span>
+
+        <span class="c1"># Set cube lights to yellow</span>
+        <span class="n">cube</span><span class="o">.</span><span class="n">set_lights</span><span class="p">(</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">yellow_light</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>light</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.Light" title="anki_vector.lights.Light"><code class="xref py py-class docutils literal notranslate"><span class="pre">Light</span></code></a>) – The settings for the lights</li>
+<li><strong>color_profile</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.ColorProfile" title="anki_vector.lights.ColorProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorProfile</span></code></a>) – The profile to be used for the cube lights</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.objects.LightCube.set_lights_off">
+<code class="descname">set_lights_off</code><span class="sig-paren">(</span><em>color_profile=&lt;anki_vector.lights.ColorProfile object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.LightCube.set_lights_off" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all lights off on the cube</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="c1"># ensure we are connected to a cube</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connect_cube</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="p">:</span>
+        <span class="n">cube</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span>
+
+        <span class="c1"># Set cube lights to yellow</span>
+        <span class="n">cube</span><span class="o">.</span><span class="n">set_lights</span><span class="p">(</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">lights</span><span class="o">.</span><span class="n">yellow_light</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="c1"># Turn off cube lights</span>
+        <span class="n">cube</span><span class="o">.</span><span class="n">set_lights_off</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color_profile</strong> (<a class="reference internal" href="anki_vector.lights.html#anki_vector.lights.ColorProfile" title="anki_vector.lights.ColorProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorProfile</span></code></a>) – The profile to be used for the cube lights</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.objects.LightCube.teardown">
+<code class="descname">teardown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.objects.LightCube.teardown" title="Permalink to this definition">¶</a></dt>
+<dd><p>All faces will be torn down by the world when no longer needed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.top_face_orientation_rad">
+<code class="descname">top_face_orientation_rad</code><a class="headerlink" href="#anki_vector.objects.LightCube.top_face_orientation_rad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angular distance from the current reported up axis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">top_face_orientation_rad</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">top_face_orientation_rad</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.up_axis">
+<code class="descname">up_axis</code><a class="headerlink" href="#anki_vector.objects.LightCube.up_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object’s up_axis value from the last time it changed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">up_axis</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="o">.</span><span class="n">up_axis</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">&lt;google.protobuf.internal.enum_type_wrapper.EnumTypeWrapper object at 0x104d7d320&gt;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.objects.LightCube.visibility_timeout">
+<code class="descname">visibility_timeout</code><em class="property"> = 0.4</em><a class="headerlink" href="#anki_vector.objects.LightCube.visibility_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Length of time in seconds to go without receiving an observed event before
+assuming that Vector can no longer see an object. Can be overridden in subclasses.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.photos.html" class="btn btn-neutral float-right" title="anki_vector.photos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.motors.html" class="btn btn-neutral" title="anki_vector.motors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Oct, 22, 2018 03:00:11 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

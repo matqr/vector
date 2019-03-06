@@ -1,0 +1,868 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.world &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anki_vector.messaging.client" href="anki_vector.messaging.client.html" />
+    <link rel="prev" title="anki_vector.vision" href="anki_vector.vision.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl.html">anki_vector.opengl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_vector.html">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.messaging.client.html">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.world</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.world.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.world">
+<span id="anki-vector-world"></span><h1>anki_vector.world<a class="headerlink" href="#module-anki_vector.world" title="Permalink to this headline">¶</a></h1>
+<p>Vector’s known view of his world.</p>
+<p>This view includes objects and faces it knows about and can currently
+see with its camera.</p>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#anki_vector.world.World" title="anki_vector.world.World"><code class="xref py py-obj docutils literal notranslate"><span class="pre">World</span></code></a>(robot)</td>
+<td>Represents the state of the world, as known to Vector.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="anki_vector.world.World">
+<em class="property">class </em><code class="descclassname">anki_vector.world.</code><code class="descname">World</code><span class="sig-paren">(</span><em>robot</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents the state of the world, as known to Vector.</p>
+<dl class="attribute">
+<dt id="anki_vector.world.World.all_objects">
+<code class="descname">all_objects</code><a class="headerlink" href="#anki_vector.world.World.all_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>generator</em> – yields each object in the world.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the all objects&#39; class details</span>
+<span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">all_objects</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator yielding <a class="reference internal" href="anki_vector.faces.html#anki_vector.faces.Face" title="anki_vector.faces.Face"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.faces.Face</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.faces.LightCube</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.faces.Charger</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.faces.CustomObject</span></code> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.faces.FixedCustomObject</span></code> instances.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.charger">
+<code class="descname">charger</code><a class="headerlink" href="#anki_vector.world.World.charger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most recently observed Vector charger object, or None if no chargers have been observed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;most recently observed charger: {0}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">charger</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/exceptions.html#ValueError" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the cube_id is invalid.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.Charger" title="anki_vector.objects.Charger"><code class="xref py py-class docutils literal notranslate"><span class="pre">Charger</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.charger_factory">
+<code class="descname">charger_factory</code><a class="headerlink" href="#anki_vector.world.World.charger_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.Charger" title="anki_vector.objects.Charger"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.objects.Charger</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>The world will tear down all its faces and objects.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.connect_cube">
+<code class="descname">connect_cube</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.connect_cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to connect to a cube.</p>
+<p>If a cube is currently connected, this will do nothing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connect_cube</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectCubeResponse</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.connected_light_cube">
+<code class="descname">connected_light_cube</code><a class="headerlink" href="#anki_vector.world.World.connected_light_cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>A light cube connected to Vector, if any.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connect_cube</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="p">:</span>
+        <span class="n">dock_response</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">behavior</span><span class="o">.</span><span class="n">dock_with_cube</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.LightCube" title="anki_vector.objects.LightCube"><code class="xref py py-class docutils literal notranslate"><span class="pre">LightCube</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.create_custom_fixed_object">
+<code class="descname">create_custom_fixed_object</code><span class="sig-paren">(</span><em>pose</em>, <em>x_size_mm</em>, <em>y_size_mm</em>, <em>z_size_mm</em>, <em>relative_to_robot=False</em>, <em>use_robot_origin=True</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.create_custom_fixed_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a cuboid of custom size and places it in the world. It cannot be observed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pose</strong> (<a class="reference internal" href="anki_vector.util.html#anki_vector.util.Pose" title="anki_vector.util.Pose"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pose</span></code></a>) – The pose of the object we are creating.</li>
+<li><strong>x_size_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – size of the object (in millimeters) in the x axis.</li>
+<li><strong>y_size_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – size of the object (in millimeters) in the y axis.</li>
+<li><strong>z_size_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – size of the object (in millimeters) in the z axis.</li>
+<li><strong>relative_to_robot</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – whether or not the pose given assumes the robot’s pose as its origin.</li>
+<li><strong>use_robot_origin</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – whether or not to override the origin_id in the given pose to be
+the origin_id of Vector.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="kn">from</span> <span class="nn">anki_vector.util</span> <span class="kn">import</span> <span class="n">degrees</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">create_custom_fixed_object</span><span class="p">(</span><span class="n">Pose</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">angle_z</span><span class="o">=</span><span class="n">degrees</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
+                                           <span class="n">x_size_mm</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y_size_mm</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">z_size_mm</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                                           <span class="n">relative_to_robot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">FixedCustomObject instance with the specified dimensions and pose.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.FixedCustomObject" title="anki_vector.objects.FixedCustomObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">FixedCustomObject</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.custom_object_archetypes">
+<code class="descname">custom_object_archetypes</code><a class="headerlink" href="#anki_vector.world.World.custom_object_archetypes" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>generator</em> – yields each custom object archetype that Vector will look for.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">custom_object_archetypes</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator yielding CustomObjectArchetype instances</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Iterable" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code></a>[<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectArchetype" title="anki_vector.objects.CustomObjectArchetype"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectArchetype</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.custom_object_factory">
+<code class="descname">custom_object_factory</code><a class="headerlink" href="#anki_vector.world.World.custom_object_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObject" title="anki_vector.objects.CustomObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.objects.CustomObject</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.define_custom_box">
+<code class="descname">define_custom_box</code><span class="sig-paren">(</span><em>custom_object_type</em>, <em>marker_front</em>, <em>marker_back</em>, <em>marker_top</em>, <em>marker_bottom</em>, <em>marker_left</em>, <em>marker_right</em>, <em>depth_mm</em>, <em>width_mm</em>, <em>height_mm</em>, <em>marker_width_mm</em>, <em>marker_height_mm</em>, <em>is_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.define_custom_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a cuboid of custom size and binds it to a specific custom object type.</p>
+<p>The robot will now detect the markers associated with this object and send an
+object_observed message when they are seen. The markers must be placed in the center
+of their respective sides. All 6 markers must be unique.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>custom_object_type</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectTypes" title="anki_vector.objects.CustomObjectTypes"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectTypes</span></code></a>) – the object type you are binding this custom object to.</li>
+<li><strong>marker_front</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to the front of the object.</li>
+<li><strong>marker_back</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to the back of the object.</li>
+<li><strong>marker_top</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to the top of the object.</li>
+<li><strong>marker_bottom</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to the bottom of the object.</li>
+<li><strong>marker_left</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to the left of the object.</li>
+<li><strong>marker_right</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to the right of the object.</li>
+<li><strong>depth_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – depth of the object (in millimeters) (X axis).</li>
+<li><strong>width_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – width of the object (in millimeters) (Y axis).</li>
+<li><strong>height_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – height of the object (in millimeters) (Z axis).
+(the height of the object)</li>
+<li><strong>marker_width_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – width of the printed marker (in millimeters).</li>
+<li><strong>maker_height_mm</strong> – height of the printed marker (in millimeters).</li>
+<li><strong>is_unique</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True, the robot will assume there is only 1 of this object.
+(and therefore only 1 of each of any of these markers) in the world.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="n">enable_custom_object_detection</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">define_custom_box</span><span class="p">(</span><span class="n">custom_object_type</span><span class="o">=</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectTypes</span><span class="o">.</span><span class="n">CustomType00</span><span class="p">,</span>
+                                  <span class="n">marker_front</span><span class="o">=</span>  <span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Circles2</span><span class="p">,</span>
+                                  <span class="n">marker_back</span><span class="o">=</span>   <span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Circles3</span><span class="p">,</span>
+                                  <span class="n">marker_top</span><span class="o">=</span>    <span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Circles4</span><span class="p">,</span>
+                                  <span class="n">marker_bottom</span><span class="o">=</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Circles5</span><span class="p">,</span>
+                                  <span class="n">marker_left</span><span class="o">=</span>   <span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Triangles2</span><span class="p">,</span>
+                                  <span class="n">marker_right</span><span class="o">=</span>  <span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Triangles3</span><span class="p">,</span>
+                                  <span class="n">depth_mm</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">width_mm</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">height_mm</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span>
+                                  <span class="n">marker_width_mm</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">marker_height_mm</span><span class="o">=</span><span class="mf">50.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CustomObject instance with the specified dimensions.
+This is None if the definition failed internally.
+Note: No instances of this object are added to the world until they have been seen.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li>TypeError if the custom_object_type is of the wrong type.</li>
+<li>ValueError if the 6 markers aren’t unique.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObject" title="anki_vector.objects.CustomObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObject</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.define_custom_cube">
+<code class="descname">define_custom_cube</code><span class="sig-paren">(</span><em>custom_object_type</em>, <em>marker</em>, <em>size_mm</em>, <em>marker_width_mm</em>, <em>marker_height_mm</em>, <em>is_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.define_custom_cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a cube of custom size and binds it to a specific custom object type.</p>
+<p>The robot will now detect the markers associated with this object and send an
+object_observed message when they are seen. The markers must be placed in the center
+of their respective sides.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>custom_object_type</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectTypes" title="anki_vector.objects.CustomObjectTypes"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectTypes</span></code></a>) – the object type you are binding this custom object to.</li>
+<li><strong>marker</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to every side of the cube.</li>
+<li><strong>size_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – size of each side of the cube (in millimeters).</li>
+<li><strong>marker_width_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – width of the printed marker (in millimeters).</li>
+<li><strong>maker_height_mm</strong> – height of the printed marker (in millimeters).</li>
+<li><strong>is_unique</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True, the robot will assume there is only 1 of this object
+(and therefore only 1 of each of any of these markers) in the world.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="n">enable_custom_object_detection</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">define_custom_cube</span><span class="p">(</span><span class="n">custom_object_type</span><span class="o">=</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectTypes</span><span class="o">.</span><span class="n">CustomType00</span><span class="p">,</span>
+                                   <span class="n">marker</span><span class="o">=</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Circles2</span><span class="p">,</span>
+                                   <span class="n">size_mm</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span>
+                                   <span class="n">marker_width_mm</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">marker_height_mm</span><span class="o">=</span><span class="mf">50.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">CustomObject instance with the specified dimensions.
+This is None if the definition failed internally.
+Note: No instances of this object are added to the world until they have been seen.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">TypeError if the custom_object_type is of the wrong type.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObject" title="anki_vector.objects.CustomObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObject</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.define_custom_wall">
+<code class="descname">define_custom_wall</code><span class="sig-paren">(</span><em>custom_object_type</em>, <em>marker</em>, <em>width_mm</em>, <em>height_mm</em>, <em>marker_width_mm</em>, <em>marker_height_mm</em>, <em>is_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.define_custom_wall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a wall of custom width and height, with a fixed depth of 10mm, and binds it to a specific custom object type.</p>
+<p>The robot will now detect the markers associated with this object and send an
+object_observed message when they are seen. The markers must be placed in the center
+of their respective sides.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>custom_object_type</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectTypes" title="anki_vector.objects.CustomObjectTypes"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectTypes</span></code></a>) – the object type you are binding this custom object to.</li>
+<li><strong>marker</strong> (<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObjectMarkers" title="anki_vector.objects.CustomObjectMarkers"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObjectMarkers</span></code></a>) – the marker affixed to the front and back of the wall.</li>
+<li><strong>width_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – width of the object (in millimeters). (Y axis).</li>
+<li><strong>height_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – height of the object (in millimeters). (Z axis).</li>
+<li><strong>width_mm</strong> – width of the wall (along Y axis) (in millimeters).</li>
+<li><strong>height_mm</strong> – height of the wall (along Z axis) (in millimeters).</li>
+<li><strong>marker_width_mm</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>) – width of the printed marker (in millimeters).</li>
+<li><strong>maker_height_mm</strong> – height of the printed marker (in millimeters).</li>
+<li><strong>is_unique</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – If True, the robot will assume there is only 1 of this object
+(and therefore only 1 of each of any of these markers) in the world.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="n">enable_custom_object_detection</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">define_custom_wall</span><span class="p">(</span><span class="n">custom_object_type</span><span class="o">=</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectTypes</span><span class="o">.</span><span class="n">CustomType00</span><span class="p">,</span>
+                                   <span class="n">marker</span><span class="o">=</span><span class="n">anki_vector</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">CustomObjectMarkers</span><span class="o">.</span><span class="n">Circles2</span><span class="p">,</span>
+                                   <span class="n">width_mm</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">height_mm</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span>
+                                   <span class="n">marker_width_mm</span><span class="o">=</span><span class="mf">50.0</span><span class="p">,</span> <span class="n">marker_height_mm</span><span class="o">=</span><span class="mf">50.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">CustomObject instance with the specified dimensions.
+This is None if the definition failed internally.
+Note: No instances of this object are added to the world until they have been seen.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">TypeError if the custom_object_type is of the wrong type.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObject" title="anki_vector.objects.CustomObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObject</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.delete_custom_objects">
+<code class="descname">delete_custom_objects</code><span class="sig-paren">(</span><em>delete_custom_marker_objects=True</em>, <em>delete_fixed_custom_objects=True</em>, <em>delete_custom_object_archetypes=True</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.delete_custom_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Causes the robot to forget about custom objects it currently knows about.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">delete_custom_objects</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.disconnect_cube">
+<code class="descname">disconnect_cube</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.disconnect_cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests a disconnection from the currently connected cube.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">disconnect_cube</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">DisconnectCubeResponse</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.face_factory">
+<code class="descname">face_factory</code><a class="headerlink" href="#anki_vector.world.World.face_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="anki_vector.faces.html#anki_vector.faces.Face" title="anki_vector.faces.Face"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.faces.Face</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.fixed_custom_object_factory">
+<code class="descname">fixed_custom_object_factory</code><a class="headerlink" href="#anki_vector.world.World.fixed_custom_object_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.FixedCustomObject" title="anki_vector.objects.FixedCustomObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.objects.FixedCustomObject</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.flash_cube_lights">
+<code class="descname">flash_cube_lights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.flash_cube_lights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flash cube lights</p>
+<p>Plays the default cube connection animation on the currently
+connected cube’s lights.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">flash_cube_lights</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">FlashCubeLightsResponse</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.forget_preferred_cube">
+<code class="descname">forget_preferred_cube</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.forget_preferred_cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forget preferred cube.</p>
+<p>‘Forget’ the robot’s preferred cube. This will cause the robot to
+connect to the cube with the highest RSSI (signal strength) next
+time a connection is requested.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">forget_preferred_cube</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForgetPreferredCubeResponse</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.get_face">
+<code class="descname">get_face</code><span class="sig-paren">(</span><em>face_id</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.get_face" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches a Face instance with the given id.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">my_face</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">get_face</span><span class="p">(</span><span class="n">previously_observed_face_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.faces.html#anki_vector.faces.Face" title="anki_vector.faces.Face"><code class="xref py py-class docutils literal notranslate"><span class="pre">Face</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.get_object">
+<code class="descname">get_object</code><span class="sig-paren">(</span><em>object_id</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.get_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches an object instance with the given id.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">my_obj</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">valid_object_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.light_cube">
+<code class="descname">light_cube</code><a class="headerlink" href="#anki_vector.world.World.light_cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the vector light cube object, regardless of its connection status.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">cube</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">light_cube</span>
+    <span class="k">if</span> <span class="n">cube</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cube</span><span class="o">.</span><span class="n">is_connected</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;LightCube is connected.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;LightCube isn&#39;t connected&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/exceptions.html#ValueError" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a> if the cube_id is invalid.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.LightCube" title="anki_vector.objects.LightCube"><code class="xref py py-class docutils literal notranslate"><span class="pre">LightCube</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.light_cube_factory">
+<code class="descname">light_cube_factory</code><a class="headerlink" href="#anki_vector.world.World.light_cube_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.LightCube" title="anki_vector.objects.LightCube"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.objects.LightCube</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.world.World.set_preferred_cube">
+<code class="descname">set_preferred_cube</code><span class="sig-paren">(</span><em>factory_id</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.world.World.set_preferred_cube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set preferred cube.</p>
+<p>Set the robot’s preferred cube and save it to disk. The robot
+will always attempt to connect to this cube if it is available.
+This is only used in simulation (for now).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="n">connected_cube</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">connected_light_cube</span>
+    <span class="k">if</span> <span class="n">connected_cube</span><span class="p">:</span>
+        <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">set_preferred_cube</span><span class="p">(</span><span class="n">connected_cube</span><span class="o">.</span><span class="n">factory_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>factory_id</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – The unique hardware id of the physical cube.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-class docutils literal notranslate"><span class="pre">SetPreferredCubeResponse</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.visible_custom_objects">
+<code class="descname">visible_custom_objects</code><a class="headerlink" href="#anki_vector.world.World.visible_custom_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>generator</em> – yields each custom object that Vector can currently see.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">visible_custom_objects</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator yielding CustomObject instances</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Iterable" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code></a>[<a class="reference internal" href="anki_vector.objects.html#anki_vector.objects.CustomObject" title="anki_vector.objects.CustomObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomObject</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anki_vector.world.World.visible_faces">
+<code class="descname">visible_faces</code><a class="headerlink" href="#anki_vector.world.World.visible_faces" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>generator</em> – yields each face that Vector can currently see.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the visible face&#39;s attributes</span>
+<span class="kn">import</span> <span class="nn">anki_vector</span>
+<span class="k">with</span> <span class="n">anki_vector</span><span class="o">.</span><span class="n">Robot</span><span class="p">()</span> <span class="k">as</span> <span class="n">robot</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">robot</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">visible_faces</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Face attributes:&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Face id: {face.face_id}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Updated face id: {face.updated_face_id}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Name: {face.name}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Expression: {face.expression}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Timestamp: {face.timestamp}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Pose: {face.pose}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Image Rect: {face.face_rect}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Expression score: {face.expression_score}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Left eye: {face.left_eye}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Right eye: {face.right_eye}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Nose: {face.nose}&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Mouth: {face.mouth}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator yielding <a class="reference internal" href="anki_vector.faces.html#anki_vector.faces.Face" title="anki_vector.faces.Face"><code class="xref py py-class docutils literal notranslate"><span class="pre">anki_vector.faces.Face</span></code></a> instances.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Iterable" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code></a>[<a class="reference internal" href="anki_vector.faces.html#anki_vector.faces.Face" title="anki_vector.faces.Face"><code class="xref py py-class docutils literal notranslate"><span class="pre">Face</span></code></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anki_vector.messaging.client.html" class="btn btn-neutral float-right" title="anki_vector.messaging.client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anki_vector.vision.html" class="btn btn-neutral" title="anki_vector.vision" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

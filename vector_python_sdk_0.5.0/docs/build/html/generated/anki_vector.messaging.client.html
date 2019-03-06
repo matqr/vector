@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anki_vector.messaging.client &mdash; Vector SDK 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="anki_vector.world" href="anki_vector.world.html" />
+    <!-- Google Analytics -->
+    <!--TODO: enable google analytics-->
+    <!-- <script>
+        if (window.location.hostname.toLowerCase() == 'cozmosdk.anki.com') {
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-40941061-1', 'auto');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script> -->
+    <!-- End Google Analytics -->
+     
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vector SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../initial.html">Initial Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-macos.html">Installation - macOS / OS X</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-windows.html">Installation - Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install-linux.html">Installation - Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-tips.html">Advanced Tips</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Get Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getstarted.html">Getting Started With the Vector SDK</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">The API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.html">anki_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.animation.html">anki_vector.animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.audio.html">anki_vector.audio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.behavior.html">anki_vector.behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.camera.html">anki_vector.camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.color.html">anki_vector.color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.connection.html">anki_vector.connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.events.html">anki_vector.events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.exceptions.html">anki_vector.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.faces.html">anki_vector.faces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.lights.html">anki_vector.lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.motors.html">anki_vector.motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.nav_map.html">anki_vector.nav_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.objects.html">anki_vector.objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl.html">anki_vector.opengl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_vector.html">anki_vector.opengl_vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.opengl_viewer.html">anki_vector.opengl_viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.photos.html">anki_vector.photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.proximity.html">anki_vector.proximity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.robot.html">anki_vector.robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.screen.html">anki_vector.screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.touch.html">anki_vector.touch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.util.html">anki_vector.util</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.viewer.html">anki_vector.viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.vision.html">anki_vector.vision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anki_vector.world.html">anki_vector.world</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anki_vector.messaging.client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vector SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">The API</a> &raquo;</li>
+        
+      <li>anki_vector.messaging.client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/anki_vector.messaging.client.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anki_vector.messaging.client">
+<span id="anki-vector-messaging-client"></span><h1>anki_vector.messaging.client<a class="headerlink" href="#module-anki_vector.messaging.client" title="Permalink to this headline">¶</a></h1>
+<p>Protobuf messages exposed to the Vector Python SDK.</p>
+<dl class="class">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer">
+<em class="property">class </em><code class="descclassname">anki_vector.messaging.client.</code><code class="descname">ExternalInterfaceServicer</code><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The grpc-defined connection between the SDK and Anki’s Vector robot.</p>
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.AssumeBehaviorControl">
+<code class="descname">AssumeBehaviorControl</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.AssumeBehaviorControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquire control of Vector’s AI system.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.AudioFeed">
+<code class="descname">AudioFeed</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.AudioFeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request an audio feed from the robot.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.BatteryState">
+<code class="descname">BatteryState</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.BatteryState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the current state of the battery.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.BehaviorControl">
+<code class="descname">BehaviorControl</code><span class="sig-paren">(</span><em>request_iterator</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.BehaviorControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate with and acquire control of Vector’s AI system.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.CameraFeed">
+<code class="descname">CameraFeed</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.CameraFeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request a camera feed from the robot.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.ConnectCube">
+<code class="descname">ConnectCube</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.ConnectCube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to connect to a cube. If a cube is currently connected,
+this will do nothing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.CreateFixedCustomObject">
+<code class="descname">CreateFixedCustomObject</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.CreateFixedCustomObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a permanent custom object instance in the robot’s world, with no connection to the vision system.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DefineCustomObject">
+<code class="descname">DefineCustomObject</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DefineCustomObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a custom object with distinct custom marker(s).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DeleteCustomObjects">
+<code class="descname">DeleteCustomObjects</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DeleteCustomObjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Causes the robot to forget about custom objects it currently knows about.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DeletePhoto">
+<code class="descname">DeletePhoto</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DeletePhoto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a photo by ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DisconnectCube">
+<code class="descname">DisconnectCube</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DisconnectCube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests a disconnection from the currently connected cube.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DisplayFaceImageRGB">
+<code class="descname">DisplayFaceImageRGB</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DisplayFaceImageRGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets screen (Vector’s face) to a solid color.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DockWithCube">
+<code class="descname">DockWithCube</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DockWithCube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells Vector to dock with a light cube with a given approach angle and distance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DriveOffCharger">
+<code class="descname">DriveOffCharger</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DriveOffCharger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drive Vector off the charger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DriveOnCharger">
+<code class="descname">DriveOnCharger</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DriveOnCharger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drive Vector onto the charger.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DriveStraight">
+<code class="descname">DriveStraight</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DriveStraight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells Vector to drive in a straight line.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.DriveWheels">
+<code class="descname">DriveWheels</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.DriveWheels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the speed and acceleration for Vector’s wheel motors.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.EraseAllEnrolledFaces">
+<code class="descname">EraseAllEnrolledFaces</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.EraseAllEnrolledFaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erase the enrollment (name) records for all faces.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.EraseEnrolledFaceByID">
+<code class="descname">EraseEnrolledFaceByID</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.EraseEnrolledFaceByID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erase the enrollment (name) record for the face with this ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.EventStream">
+<code class="descname">EventStream</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.EventStream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Streaming events endpoint</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.FlashCubeLights">
+<code class="descname">FlashCubeLights</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.FlashCubeLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal a connected cube to flash its lights using the default cube
+flash animation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.ForgetPreferredCube">
+<code class="descname">ForgetPreferredCube</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.ForgetPreferredCube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forget the robot’s preferred cube. This will cause the robot to
+connect to the cube with the highest RSSI (signal strength) next
+time a connection is requested. Saves this preference to disk.
+The next cube that the robot connects to will become its
+preferred cube.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.GoToPose">
+<code class="descname">GoToPose</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.GoToPose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells Vector to drive to the specified pose and orientation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.ListAnimations">
+<code class="descname">ListAnimations</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.ListAnimations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs and returns a list of animations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.MoveHead">
+<code class="descname">MoveHead</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.MoveHead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves Vector’s head.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.MoveLift">
+<code class="descname">MoveLift</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.MoveLift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves Vector’s lift.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.NetworkState">
+<code class="descname">NetworkState</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.NetworkState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the network information for Vector.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.Photo">
+<code class="descname">Photo</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.Photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a photo by ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.PhotosInfo">
+<code class="descname">PhotosInfo</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.PhotosInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the photos info.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.PlayAnimation">
+<code class="descname">PlayAnimation</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.PlayAnimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests that Vector play an animation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.ProtocolVersion">
+<code class="descname">ProtocolVersion</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.ProtocolVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks the supported protocol version by passing in the client version and
+minimum host version and receiving a response to see whether the versions are supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.RequestEnrolledNames">
+<code class="descname">RequestEnrolledNames</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.RequestEnrolledNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of names and their IDs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.SDKInitialization">
+<code class="descname">SDKInitialization</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.SDKInitialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>SDK-only message to pass version info for device OS, Python version, etc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.SayText">
+<code class="descname">SayText</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.SayText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make Vector speak text.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.SetCubeLights">
+<code class="descname">SetCubeLights</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.SetCubeLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set each of the lights on the currently connected cube based on two
+rgb values each and timing data for how to transition between them.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.SetEyeColor">
+<code class="descname">SetEyeColor</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.SetEyeColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Vector’s eye color.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.SetHeadAngle">
+<code class="descname">SetHeadAngle</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.SetHeadAngle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell Vector’s head to move to a given angle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.SetLiftHeight">
+<code class="descname">SetLiftHeight</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.SetLiftHeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell Vector’s lift to move to a given height.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.SetPreferredCube">
+<code class="descname">SetPreferredCube</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.SetPreferredCube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the robot’s preferred cube and save it to disk. The robot
+will always attempt to connect to this cube if it is available.
+This is only used in simulation for now.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.Thumbnail">
+<code class="descname">Thumbnail</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.Thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a thumbnail by ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.TurnInPlace">
+<code class="descname">TurnInPlace</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.TurnInPlace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn the robot around its current position.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.UpdateEnrolledFaceByID">
+<code class="descname">UpdateEnrolledFaceByID</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.UpdateEnrolledFaceByID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the name enrolled for a given face.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="anki_vector.messaging.client.ExternalInterfaceServicer.VersionState">
+<code class="descname">VersionState</code><span class="sig-paren">(</span><em>request</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceServicer.VersionState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the versioning information for Vector.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="anki_vector.messaging.client.ExternalInterfaceStub">
+<em class="property">class </em><code class="descclassname">anki_vector.messaging.client.</code><code class="descname">ExternalInterfaceStub</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#anki_vector.messaging.client.ExternalInterfaceStub" title="Permalink to this definition">¶</a></dt>
+<dd><p>The grpc-defined connection between the SDK and Anki’s Vector robot.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="anki_vector.world.html" class="btn btn-neutral" title="anki_vector.world" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Anki.
+      Last updated on Nov, 19, 2018 08:26:27 Coordinated Universal Time.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
